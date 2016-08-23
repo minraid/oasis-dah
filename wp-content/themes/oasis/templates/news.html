@@ -1,0 +1,41 @@
+<section class="content-inner">
+	<div class="container">
+		<div class="content-box">
+			<aside></aside>
+			<div class="content">
+				<div class="news">
+					<div routerLink="/post" class="post" *ngFor="let post of posts">
+						<h2>{{post.post_title}}</h2>
+						<div class="post-box">
+							<div class="img">
+								<img src="/img/news/1.jpg" alt="">
+							</div>
+							<div class="post-content">
+								<div class="post-details">
+									<div class="date">{{post.post_date| date: 'dd MMMM yyyy'}}</div>
+									<div class="comments">{{post.comment_count}} коментар</div>
+								</div>
+								<div class="post-excerpt" [innerHTML]="post.post_excerpt || ((post.post_content| slice:0:340)+'...')"></div>
+								<a href="#" class="link">Читати далі</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="logos">
+			<div class="arrow left"></div>
+			<div class="logo-box">
+				<ul>
+					<li><img src="/img/logo/1.png" alt=""></li>
+					<li><img src="/img/logo/2.png" alt=""></li>
+					<li><img src="/img/logo/3.png" alt=""></li>
+					<li><img src="/img/logo/4.png" alt=""></li>
+					<li><img src="/img/logo/5.png" alt=""></li>
+					<li><img src="/img/logo/6.png" alt=""></li>
+				</ul>
+			</div>
+			<div class="arrow right"></div>
+		</div>
+	</div>
+</section>

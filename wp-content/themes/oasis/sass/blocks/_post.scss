@@ -1,0 +1,160 @@
+.post {
+	h2 {
+		font-size: 26px;
+		margin-bottom: 16px;
+	}
+	.post-box {
+		.post-details {
+			color: #7f92bf;
+			margin-bottom: 15px;
+			@include clearfix;
+			.date {
+				float: left;
+				padding-right: 10px;
+				border-right: 1px solid #dad4d4;
+				line-height: 20px;
+			}
+			.comments {
+				float: left;
+				padding-left: 10px;
+				line-height: 20px;
+			}
+		}
+		.post-images {
+			@include clearfix;
+			margin: 0 -15px 20px;
+			.img-wrap {
+				float: left;
+				width: 33.333%;
+				padding: 18.75% 15px 0;
+				position: relative;
+				overflow: hidden;
+				img {
+					width: 100%;
+					position: absolute;
+					top: -99999px;
+					bottom: -99999px;
+					margin: auto;
+					left: 15px;
+					right: 15px;
+				}
+			}
+		}
+	}
+	.next-wrap {
+		@include clearfix;
+		margin-bottom: 40px;
+	}
+	.comments {
+		.comment-count {
+			background-color: #f9f9f9;
+			line-height: 35px;
+			padding: 0 20px;
+			font-size: 16px;
+			color: #353535;
+			position: relative;
+			margin-bottom: 40px;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 0;
+				border-top: 20px solid #f9f9f9;
+				border-right: 30px solid transparent;
+			}
+		}
+		.comment {
+			padding-bottom: 15px;
+			border-bottom: 1px solid #dad4d4;
+			margin-bottom: 10px;
+			.comment-details {
+				margin-bottom: 20px;
+				@include clearfix;
+				.author-img {
+					float: left;
+					padding: 20px;
+					background: #dad4d4;
+					margin-right: 10px;
+				}
+				.comment-info {
+					float: left;
+					.name {
+						font: $PTSansbold;
+						font-size: 18px;
+						line-height: 22px;
+						color: #dc1f26;
+					}
+					.date {
+						line-height: 22px;
+						color: #7f92bf;
+					}
+				}
+			}
+			.comment-content {
+				font-size: 16px;
+				line-height: 22px;
+				color: #5c5c5c;
+			}
+		}
+		.comment-form {
+			background: #f9f9f9;
+			padding: 20px;
+			h2 {
+				font-size: 18px;
+				line-height: 22px;
+				color: #353535;
+			}
+			textarea, input {
+				width: 100%;
+				resize: none;
+				padding: 5px 10px;
+				font: $PTSans;
+				font-size: 16px;
+				line-height: 22px;
+				border: 1px solid #dad4d4;
+				box-sizing: border-box;
+				margin-bottom: 10px;
+			}
+			textarea {
+				height: 80px;
+			}
+			.hint-box {
+				@include clearfix;
+				margin-bottom: 5px;
+				.hint {
+					float: left;
+					line-height: 25px;
+					color: #696565;
+				}
+			}
+			.author-form {
+				@include clearfix;
+				.author-img {
+					float: left;
+					padding: 20px;
+					background: #dad4d4;
+					margin-right: 10px;
+				}
+				.author-inputs {
+					float: left;
+					width: calc(100% - 50px);
+					input {
+						line-height: 20px;
+						margin: 4px 0;
+					}
+				}
+			}
+			button {
+				margin-left: 50px;
+				font-size: 16px;
+				line-height: 34px;
+				color: #fff;
+				padding: 0 45px;
+				border: none;
+				background-color: #dc1f26;
+				margin-top: 15px;
+				cursor: pointer;
+			}
+		}
+	}
+}

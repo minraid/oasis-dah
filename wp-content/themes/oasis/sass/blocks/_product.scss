@@ -1,0 +1,151 @@
+.product {
+	.product-main {
+		@include clearfix;
+		ul {
+			li {
+				&:before {
+					display: none;
+				}
+			}
+		}
+		.product-gallery {
+			float: left;
+			width: 37.5%;
+			padding-right: 15px;
+			.main-img {
+				padding: 10px;
+				border: 1px solid #f9f9f9;
+				cursor: pointer;
+				max-height: 245px;
+				overflow: hidden;
+				img {
+					width: 100%;
+					margin: 0;
+				}
+			}
+			.carousel {
+				margin-top: 10px;
+				position: relative;
+				padding: 0 15px;
+				.img-list {
+					display: table;
+					width: 100%;
+					padding: 0;
+					border-spacing: 8px;
+					li {
+						display: table-cell;
+						vertical-align: middle;
+						.img-box {
+							max-height: 50px;
+							overflow: hidden;
+							cursor: pointer;
+							border: 1px solid #f9f9f9;
+							img {
+								width: 100%;
+								margin: 0;
+							}
+						}
+					}
+				}
+				.arrow {
+					position: absolute;
+					top: 50%;
+					margin-top: -10px;
+					border-top: 10px solid transparent;
+					border-bottom: 10px solid transparent;
+					cursor: pointer;			
+					&.left {
+						border-right: 10px solid #dad3d3;
+						left: 0;
+					}
+					&.right {
+						border-left: 10px solid #dad3d3;
+						right: 0;
+					}
+				}
+			}
+		}
+		.product-details {
+			float: left;
+			width: 62.5%;
+			h1 {
+				font-size: 26px;
+				margin-bottom: 20px;
+			}
+			.tabs {
+				border-bottom: 1px solid #dad4d4;
+				margin-bottom: 30px;
+				@include clearfix;
+				.tab {
+					float: left;
+					padding: 0 20px;
+					line-height: 30px;
+					margin-right: 3px;
+					background: #dc1f26;
+					color: #fff;
+					cursor: pointer;
+					&.active {
+						font: $PTSansbold;
+						line-height: 30px;
+						border: 1px solid #dad4d4;
+						background: #fff;
+						color: #dc1f26;
+						border-bottom: none;
+						margin-bottom: -1px;
+						cursor: default;
+					}
+				}
+			}
+			.product-specifications {
+				.table {
+					@include clearfix
+					.labels {
+						width: 40%;
+						float: left;
+					}
+					.values {
+						float: left;
+						width: 60%;
+						.td {
+							font: $PTSansbold;
+							font-size: 16px;
+							line-height: 24px;
+							color: #191917;
+							padding: 0 10px 0 15px;
+						}
+					}
+					.td {
+						font-size: 16px;
+						line-height: 24px;
+						color: #4f4f4d;
+						padding: 0 15px 0 10px;
+						white-space: nowrap;
+						&:nth-child(2n+1) {
+							background-color: #f9f9f9;
+						}
+					}
+				}
+			}
+		}
+	}
+	.use-exmaples {
+		margin: 0 -15px 30px;
+		@include clearfix;
+		.photo {
+			width: 25%;
+			float: left;
+			padding: 15px;
+			cursor: pointer;
+			.thumbnail {
+				@include transition();
+				&:hover {
+					box-shadow: 0 0 10px rgba(0,0,0,0.15);
+				}
+				img {
+					width: 100%;
+					margin: 0;
+				}
+			}
+		}
+	}
+}

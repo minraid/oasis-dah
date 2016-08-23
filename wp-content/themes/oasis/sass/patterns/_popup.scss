@@ -1,0 +1,58 @@
+popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.7);
+	overflow-y: auto;
+	.popup-wrap {
+		display: table;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+		.popup-box {
+			display: table-cell;
+			vertical-align: middle;
+			.popup-body {
+				width: 750px;
+				padding: 25px;
+				margin: auto;
+			}
+			.popup-header {
+				@include clearfix;
+				.title {
+					float: left;
+					color: #fff;
+					font-size: 18px;
+					line-height: 46px;
+				}
+				.close {
+					float: right;
+					cursor: pointer;
+				}
+			}
+			.popup-content {
+				position: relative;
+				.img-box {
+					box-shadow: 0 0 25px rgba(0,0,0,0.3);
+					img {
+						width: 100%;
+						margin: 0;
+					}
+				}
+				.arrow {
+					position: absolute;
+					top: 50%;
+					cursor: pointer;
+					&.left {
+						left: -45px;
+					}
+					&.right {
+						right: -45px;
+					}
+				}
+			}
+		}
+	}
+}

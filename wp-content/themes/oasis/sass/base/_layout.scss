@@ -1,0 +1,50 @@
+html {
+	font: $PTSans;
+}
+
+body {
+	&.popup {
+		overflow: hidden;
+	}
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	@include clearfix;
+}
+
+.content-box {
+	@include clearfix;
+}
+
+.content {
+	width: 100%;
+}
+
+aside + .content {
+	width: 66.666%;
+	float: left;
+	padding-left: 15px;
+}
+
+.breadcrumbs {
+	color: #a9a5a5;
+	margin-bottom: 30px;
+	a {
+		color: #303ec1;
+	}
+}
+
+.back-link {
+	color: #696960;
+	font: $PTSanitalic;
+	font-size: 16px;
+}
+.next-link {
+	color: #303ec1;
+	font: $PTSanitalic;
+	font-size: 14px;
+	line-height: 22px;
+	float: right;
+}

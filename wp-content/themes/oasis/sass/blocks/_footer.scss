@@ -1,0 +1,64 @@
+footer {
+	.footer-box {
+		background-color: #191917;
+		padding: 50px 0 25px;
+		h4 {
+			color: #dad4d4;
+			font: $PTSansbold;
+			font-size: 20px;
+			line-height: 24px;
+			margin-bottom: 20px;
+		}
+		.products, .menu {
+			float: left;
+			width: 25%;
+		}
+		ul {
+			li {
+				a {
+					color: #91918b;
+					font-size: 16px;
+					line-height: 24px;
+					text-decoration: none;
+					@include transition($property: color);
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		}
+		.address {
+			float: right;
+			width: 25%;
+			p {
+				color: #91918b;
+				font-size: 16px;
+				line-height: 22px;
+				&.copyright {
+					max-width: 50%;
+					margin-top: 35px;
+				}
+			}
+		}
+		.stripe {
+			border-bottom: 1px solid #131312;
+			width: 300px;
+			margin: 50px auto 0;
+		}
+	}
+	.developed {
+		background-color: #131312;
+		padding: 25px 0;
+		color: #91918b;
+		text-align: center;
+		a {
+			color: #dad4d4;
+			text-decoration: none;
+			border-bottom: 1px solid transparent;
+			@include transition($property: border-color);
+			&:hover {
+				border-color: #dad4d4;
+			}
+		}
+	}
+}

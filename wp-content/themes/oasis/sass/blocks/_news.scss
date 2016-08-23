@@ -1,0 +1,58 @@
+.news {
+	.post {
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid #dad4d4;
+		&:last-child {
+			border: none;
+		}
+		h2 {
+			font-size: 22px;
+			margin-bottom: 20px;
+		}
+		.post-box {
+			@include clearfix;
+			.img {
+				width: 25%;
+				float: left;
+				padding-right: 15px;
+				img {
+					width: 100%;
+					margin: 0;
+				}
+			}
+			.post-content {
+				width: 75%;
+				float: left;
+				padding-left: 15px;
+				.post-details {
+					color: #7f92bf;
+					margin-bottom: 15px;
+					@include clearfix;
+					.date {
+						float: left;
+						padding-right: 10px;
+						border-right: 1px solid #dad4d4;
+						line-height: 20px;
+					}
+					.comments {
+						float: left;
+						padding-left: 10px;
+						line-height: 20px;
+					}
+				}
+				.post-excerpt {
+					margin-bottom: 15px;
+					p {
+						margin-bottom: 0;
+					}
+				}
+				.link {
+					font: $PTSanitalic;
+					color: #303ec1;
+					line-height: 22px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,146 @@
+.contacts {
+	h1 {
+		font-size: 26px;
+		color: #191917;
+		margin-bottom: 20px;
+	}
+	.adress {
+		margin-bottom: 20px;
+		p {
+			margin: 0;
+		}
+	}
+	.staff {
+		@include clearfix;
+		margin: 0 -15px 40px;
+		.contact {
+			width: 50%;
+			float: left;
+			padding: 20px 15px;
+			.img-box {
+				width: 25%;
+				height: 68px;
+				float: left;
+				position: relative;
+				overflow: hidden;
+				img {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: -100px;
+					right: -100px;
+					max-width: 120%;
+					min-height: 100%;
+					margin: 0 auto;
+				}
+			}
+			.contact-details {
+				width: 75%;
+				float: left;
+				padding-left: 10px;
+				.name {
+					font: $PTSansbold;
+					font-size: 16px;
+					line-height: 22px;
+					color: #dc1f26;
+				}
+				.details {
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}
+		.email {
+			width: 50%;
+			float: left;
+			padding: 20px 15px;
+			.icon {
+				width: 25%;
+				float: left;
+				padding: 34px 0;
+				background-color: #dad4d4;
+			}
+			.contact-details {
+				width: 75%;
+				float: left;
+				padding: 12px 0 0 10px;
+				.title {
+					font: $PTSansbold;
+					font-size: 16px;
+					line-height: 22px;
+					color: #191917;
+				}
+				.details {
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+.contact-form {
+	border-top: 1px solid #dad4d4;
+	padding-top: 40px;
+	h2 {
+		font-size: 26px;
+		color: #191917;
+		margin-bottom: 20px;
+	}
+	.hint {
+		color: #696565;
+		line-height: 22px;
+		margin-bottom: 10px;
+	}
+	form.contact {
+		background-color: #f9f9f9;
+		padding: 20px;
+		.inputs {
+			@include clearfix;
+			.input-form {
+				width: 50%;
+				float: left;
+				&:first-child {
+					padding-right: 15px;
+				}
+				&:last-child {
+					padding-left: 15px;
+				}
+			}
+		}
+		.input-form {
+			label {
+				display: block;
+				font-size: 16px;
+				line-height: 22px;
+				margin-bottom: 5px;
+				color: #353535;
+			}
+			textarea, input {
+				width: 100%;
+				padding: 5px 10px;
+				font: $PTSans;
+				font-size: 16px;
+				line-height: 22px;
+				border: 1px solid #dad4d4;
+				box-sizing: border-box;
+				margin-bottom: 10px;
+			}
+			textarea {
+				height: 80px;
+				resize: none;
+			}
+		}
+		button {
+			font-size: 16px;
+			line-height: 34px;
+			color: #fff;
+			padding: 0 45px;
+			border: none;
+			background-color: #dc1f26;
+			margin-top: 15px;
+			cursor: pointer;
+		}
+	}
+}

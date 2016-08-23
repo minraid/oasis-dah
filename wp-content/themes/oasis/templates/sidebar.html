@@ -1,0 +1,14 @@
+
+<div class="menu">
+	<h4><span>Меню</span></h4>
+	<ul>
+		<li routerLinkActive="active" *ngFor="let item of menu">
+			<a [routerLink]="['/catalog', item.post_name]">{{item.title}}</a>
+			<ul>
+				<li *ngFor="let subitem of item.subitems">
+					<a [routerLink]="['/brand', subitem.post_name]">{{subitem.title}}</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>

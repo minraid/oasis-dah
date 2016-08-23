@@ -1,0 +1,26 @@
+@font-face {
+	font-family: PTSansItalic;
+	src:url('fonts/PT_Sans-Web-Italic.ttf');
+}
+@font-face {
+	font-family: PTSans;
+	src:url('fonts/PT_Sans-Web-Regular.ttf');
+}
+@font-face {
+	font-family: PTSansBold;
+	src:url('fonts/PT_Sans-Web-Bold.ttf');
+}
+@font-face {
+	font-family: Roboto;
+	src:url('fonts/Roboto-Light.ttf');
+}
+@font-face {
+	font-family: RobotoBold;
+	src:url('fonts/Roboto-Bold.ttf');
+}
+
+$PTSans : 14px/1rem PTSans, sans-serif;
+$PTSanitalic: 14px/1rem PTSansItalic, sans-serif;
+$PTSansbold : 14px/1rem PTSansBold, sans-serif;
+$Roboto : 14px/1rem Roboto, sans-serif;
+$Robotobold : 14px/1rem RobotoBold, sans-serif;

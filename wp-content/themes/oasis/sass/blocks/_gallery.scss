@@ -1,0 +1,58 @@
+.gallery {
+	@include clearfix;
+	.album {
+		width: 50%;
+		float: left;
+		padding: 5px 5px 25px 5px;
+		cursor: pointer;
+		&:nth-child(2n+1) {
+			padding-right: 10px;
+		}
+		&:nth-child(2n+2) {
+			padding-left: 10px;
+		}
+		.thumbnail {
+			position: relative;
+			overflow: hidden;
+			@include transition();
+			&:hover {
+				box-shadow: 0 0 10px rgba(0,0,0,0.15);
+			}
+			img {
+				width: 100%;
+				margin: 0;
+			}
+			.heading {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				font-size: 18px;
+				line-height: 33px;
+				color: #fff;
+				text-align: center;
+				background-color: rgba(53,53,53,0.9);
+				box-shadow: 0 -2px 7px rgba(0,0,0,0.2);
+			}
+		}
+	}
+}
+.album-gallery {
+	margin: 0 -15px;
+	.photo {
+		width: 25%;
+		float: left;
+		padding: 15px;
+		cursor: pointer;
+		.thumbnail {
+			@include transition();
+			&:hover {
+				box-shadow: 0 0 10px rgba(0,0,0,0.15);
+			}
+			img {
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
+}

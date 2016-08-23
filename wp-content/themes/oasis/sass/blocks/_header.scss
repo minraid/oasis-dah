@@ -1,0 +1,105 @@
+header {
+	.header-box {
+		padding: 25px 0;
+		.logo {
+			display: block;
+			float: left;
+			width: 18%;
+			padding-top: 90px;
+			background: url('img/logo.svg') left center no-repeat;
+		}
+		.details {
+			float: left;
+			width: 26%;
+			padding-left: 15px;
+			.moto {
+				font-size: 20px;
+				line-height: 26px;
+				color: #4f4f4d;
+				@include noselect;
+			}
+			.address {
+				font: $Roboto;
+				color: #999494;
+				line-height: 16px;
+				margin-top: 10px;
+			}
+		}
+		.phones {
+			float: right;
+			width: 20%;
+			padding-left: 15px;
+			box-sizing: border-box;
+			.phone {
+				font-size: 24px;
+				line-height: 30px;
+				color: #dc1f26;
+			}
+			.shedule {
+				font: $Roboto;
+				color: #999494;
+				line-height: 16px;
+				margin-top: 10px;
+			}
+		}
+	}
+	.menu-box {
+		background-color: #353535;
+		box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+		padding: 5px 0;
+		@include noselect;
+		div.menu {
+			float: left;
+			padding: 10px 0;
+			ul {
+				li {
+					float: left;
+					padding: 0 20px;
+					&:first-child {
+						padding-left: 0;
+					}
+					&:last-child {
+						padding-right: 0;
+					}
+					a {
+						text-decoration: none;
+						color: #dad4d4;
+						font-size: 16px;
+						line-height: 20px;
+						@include transition($property: color, $duration: .15s, $animation: 'ease-out');
+						&:hover {
+							color: #ffffff;
+						}
+					}
+				}
+			}
+		}
+		.social-langs {
+			float: right;
+			width: 16.66%;
+			.social{
+				float: left;
+				padding: 0 15px;
+			}
+			.langs {
+				float: right;
+				padding-left: 15px;
+				border-left: 1px solid #2b2b28;
+				.lang {
+					float: left;
+					color: #dad4d4;
+					cursor: pointer;
+					line-height: 40px;
+					padding: 0 10px;
+					@include transition($property: color, $duration: .15s, $animation: 'ease-out');
+					&:hover {
+						color: #ffffff;
+					}
+					&:active {
+						color: #dc1f26;
+					}
+				}
+			}
+		}
+	}
+}
