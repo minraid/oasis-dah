@@ -31,7 +31,7 @@
                     <div class="breadcrumbs">
                         <?= $breadcrumbs; ?>
                     </div>
-                    <div class="product">
+                    <div class="product" ng-controller="productCtrl as product">
                         <div class="product-main">
                             <div class="product-gallery">
                                 <?php $carousel = get_field('color'); ?>
@@ -86,9 +86,9 @@
                             <div class="use-exmaples" ng-switch-when="examples">
                                 <?php $examples = get_field('examples');
                                 if($examples) {
-                                    foreach ($examples as $example) { ?>
+                                    foreach ($examples as $key => $example) { ?>
                                         <div class="photo">
-                                            <div class="thumbnail" ng-click="showGallery=!showGallery"><img src="<?php echo $example['sizes']['medium']; ?>" alt=""></div>
+                                            <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($examples) .",". $key); ?>);'><img src="<?php echo $example['sizes']['medium']; ?>" alt=""></div>
                                         </div>
                                         <?php } 
                                     } ?>
@@ -96,9 +96,9 @@
                                 <div class="accessories" ng-switch-when="accessories">
                                     <?php $accessories = get_field('accessories');
                                     if($accessories) {
-                                        foreach ($accessories as $accessory) { ?>
+                                        foreach ($accessories as $key => $accessory) { ?>
                                             <div class="photo">
-                                                <div class="thumbnail" ng-click="showGallery=!showGallery"><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
+                                                <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($accessories) .",". $key); ?>);'><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
                                             </div>
                                             <?php } 
                                         } ?>
@@ -122,7 +122,7 @@
                         </div>
                         <div class="arrow right"></div>
                     </div>
-                    <popup class="img" ng-class="{'active' : showGallery}" gallery='<?php echo json_encode($examples); ?>'></popup>
+                    <popup class="img" gallery></popup>
                 </div>
             </section>
             <?php get_footer( ); ?>
