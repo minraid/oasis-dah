@@ -35,5 +35,10 @@
 		<div class="container">Розробка сайту: <a href="https://flowww.com.ua" target="_blank">Flowww</a></div>
 	</div>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/backLink.directive.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/carousel.directive.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.directive.js"></script>
 </body>
 </html>

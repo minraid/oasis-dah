@@ -1,0 +1,21 @@
+<div class="popup-wrap">
+    <div class="popup-box">
+        <div class="popup-body">
+            <div class="popup-header">
+                <div class="title" ng-bind="images[i].title"></div>
+                <div class="close"></div>
+            </div>
+            <div class="popup-content">
+                <div class="img-box">
+                    <ul ng-style="{'width':(images.length*100)+'%'}">
+                        <li ng-repeat="img in images track by $index" ng-style="{'width':(100/images.length)+'%'}">
+                            <img ng-src="{{img.sizes.large}}" alt="{{img.title}}">
+                        </li>
+                    </ul>
+                </div>
+                <div class="arrow left" ng-click="move(true)"></div>
+                <div class="arrow right" ng-click="move(false)"></div>
+            </div>
+        </div>
+    </div>
+</div>

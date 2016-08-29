@@ -3,6 +3,19 @@
 add_action( 'init', 'register_products' );
 add_action( 'init', 'register_articles' );
 add_action( 'init', 'register_menu' );
+add_theme_support( 'post-thumbnails' );
+
+function acf_excerpt($text) {
+	if ( '' != $text ) {
+		$text = strip_shortcodes( $text );
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]>', ']]>', $text);
+		$excerpt_length = 30;
+		$excerpt_more = apply_filters('excerpt_more', ' ' . '...');
+		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	}
+	return apply_filters('the_excerpt', $text);
+}
 
 function register_products() {
 	$args = array(
@@ -29,7 +42,7 @@ function register_products() {
 		'show_in_menu'        => true,
 		'menu_position'       => 5,
 		'menu_icon'           => 'dashicons-cart', 
-		'supports'            => array('title','editor'),
+		'supports'            => array('title','editor','thumbnail'),
 		'taxonomies'          => array('category'),
 		'rewrites'            => array('slug'=>'products')
 	);

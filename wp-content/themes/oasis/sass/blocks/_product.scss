@@ -24,17 +24,24 @@
 				}
 			}
 			.carousel {
-				margin-top: 10px;
+				margin: 10px 0;
 				position: relative;
 				padding: 0 15px;
+				.carousel-inner {
+					width: 100%;
+					overflow: hidden;
+				}
 				.img-list {
-					display: table;
 					width: 100%;
 					padding: 0;
+					margin: 0;
 					border-spacing: 8px;
+					@include transition(transform, .5s, 'ease-in-out');
+					@include clearfix;
 					li {
-						display: table-cell;
-						vertical-align: middle;
+						float: left;
+						width: 25%;
+						padding: 0 4px;
 						.img-box {
 							max-height: 50px;
 							overflow: hidden;
@@ -79,19 +86,20 @@
 				.tab {
 					float: left;
 					padding: 0 20px;
+					font: $PTSansbold;
 					line-height: 30px;
 					margin-right: 3px;
 					background: #dc1f26;
 					color: #fff;
 					cursor: pointer;
+					border: 1px solid transparent;
+					border-bottom: none;
+					margin-bottom: -1px;
+					@include transition(all, 0.15s)
 					&.active {
-						font: $PTSansbold;
-						line-height: 30px;
-						border: 1px solid #dad4d4;
+						border-color: #dad4d4;
 						background: #fff;
 						color: #dc1f26;
-						border-bottom: none;
-						margin-bottom: -1px;
 						cursor: default;
 					}
 				}
@@ -128,15 +136,21 @@
 			}
 		}
 	}
-	.use-exmaples {
+	.product-description {
+		animation: switch 0.25s ease-in-out;
+	}
+	.use-exmaples, .accessories {
 		margin: 0 -15px 30px;
+		animation: switch 0.25s ease-in-out;
 		@include clearfix;
 		.photo {
-			width: 25%;
+			width: 50%;
 			float: left;
 			padding: 15px;
 			cursor: pointer;
 			.thumbnail {
+				height: 206px;
+				overflow: hidden;
 				@include transition();
 				&:hover {
 					box-shadow: 0 0 10px rgba(0,0,0,0.15);
@@ -147,5 +161,13 @@
 				}
 			}
 		}
+	}
+}
+@keyframes switch {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

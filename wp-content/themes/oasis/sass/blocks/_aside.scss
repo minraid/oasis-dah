@@ -25,8 +25,8 @@ aside {
 				}
 			}
 		}
-		ul {
-			li {
+		ul.menu {
+			>li {
 				padding: 15px 5px;
 				border-bottom: 1px solid #dad4d4;
 				@include transition($property: padding-left);
@@ -46,33 +46,29 @@ aside {
 					>a {
 						color: #dc1f26;
 					}
-					ul {
-						max-height: 250px;
-						margin-top: 15px;
-						.current-menu-item {
-							padding-left: 0;
-							>a {
-								color: #191917;
-								border-color: #191917;
-							}
-						}
+					ul.sub-menu {
+						display: block;
 					}
 				}
-				ul {
-					max-height: 0;
-					overflow: hidden;
+				ul.sub-menu {
+					display: none;
+					margin-top: 15px;
 					padding-left: 35px;
-					@include transition($property: max-height, $animation: 'ease-out');
 					li {
-						padding: 6px 0;
-						border: none;
 						a {
 							font: $PTSans;
 							color: #4f4f4d;
 							font-size: 16px;
+							line-height: 27px;
 							border-bottom: 1px solid transparent;
 							@include transition($property: border-color);
 							&:hover {
+								border-color: #4f4f4d;
+							}
+						}
+						&.current-menu-item, &.current-menu-parent {
+							a {
+								color: #191917;
 								border-color: #4f4f4d;
 							}
 						}

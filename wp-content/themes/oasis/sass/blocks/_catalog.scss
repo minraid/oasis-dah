@@ -20,6 +20,14 @@
 				line-height: 24px;
 				color: #191917;
 			}
+			.description {
+				overflow: hidden;
+				max-height: 100px;
+				@include transition(max-height, 0.25s, 'ease-in-out');
+				&.active {
+					max-height: 300px;
+				}
+			}
 			.more {
 				float: right;
 				font: $PTSanitalic;
@@ -91,7 +99,20 @@
 			line-height: 20px;
 			color: #191917;
 			margin-bottom: 20px;
-			a {
+			@include clearfix();
+			p {
+				margin-bottom: 0;
+			}
+			.description {
+				overflow: hidden;
+				max-height: 70px;
+				@include transition(max-height, 0.25s, 'ease-in-out');
+				&.active {
+					max-height: 300px;
+				}
+			}
+			.more {
+				float: right;
 				font: $PTSanitalic;
 				font-size: 16px;
 				line-height: 22px;
@@ -135,27 +156,27 @@
 					}
 				}
 			}
-			.pagination {
-				display: table;
-				margin: auto;
-				a {
-					display: inline-block;
-					width: 24px;
-					height: 24px;
-					text-align: center;
-					line-height: 22px;
-					text-decoration: none;
-					border: 1px solid #4f4f4d;
-					margin-right: 10px;
-					color: #4f4f4d;
-					&.disabled {
-						color: #dad4d4;
-						border-color: #dad4d4;
-					}
+		}
+		.pagination {
+			display: table;
+			margin: auto;
+			a {
+				display: inline-block;
+				width: 24px;
+				height: 24px;
+				text-align: center;
+				line-height: 22px;
+				text-decoration: none;
+				border: 1px solid #4f4f4d;
+				margin-right: 10px;
+				color: #4f4f4d;
+				&.disabled {
+					color: #dad4d4;
+					border-color: #dad4d4;
 				}
-				span {
-					margin-right: 10px;
-				}
+			}
+			span {
+				margin-right: 10px;
 			}
 		}
 		.manufacturer-downloads {
@@ -177,7 +198,6 @@
 					float: left;
 				}
 				.details {
-					margin-left: 10px;
 					float: left;
 					.title {
 						line-height: 18px;

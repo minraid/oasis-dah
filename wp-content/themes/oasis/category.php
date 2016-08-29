@@ -17,10 +17,10 @@
                             </div>
                             <div class="cat-description">
                                 <h1><?= $cat->name ?></h1>
-                                <div class="desctiption">
+                                <div class="description" ng-class="{'active':open}">
                                     <?php the_field('content', $cat); ?>
                                 </div>
-                                <a href="#" class="more">Детальніше</a>
+                                <a href="" class="more" ng-click="open=!open">Детальніше</a>
                             </div>
                         </div>
                         <?php 
@@ -39,7 +39,7 @@
                             <div class="manufacturer">
                                 <div class="manufacturer-description">
                                     <div class="logo">
-                                        <a>
+                                        <a href="<?= get_category_link($category->term_id); ?>">
                                             <img src="<?php the_field('thumbnail', $category); ?>" alt="">
                                         </a>
                                     </div>
@@ -51,13 +51,15 @@
                                         </div>
                                         <div class="product-length">
                                             Всього позицій:
-                                            <a href="#"><?= count($posts); ?></a>
+                                            <a href="<?= get_category_link($category->term_id); ?>"><?= count($posts); ?></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="manufacturer-text">
-                                    <?php the_field('content', $category); ?>
-                                    <a href="<?= get_category_link($category->term_id); ?>">>></a>
+                                    <?php $text = get_field('content', $category); 
+                                    echo acf_excerpt($text);
+                                    ?>
+                                    <a href="<?= get_category_link($category->term_id); ?>" class="more" ng-click="open=!open">Детальніше</a>
                                 </div>
                                 <div class="products">
                                     <?php foreach ($posts as $post) { ?>
@@ -70,112 +72,94 @@
                                             </div>
                                         </a>
                                         <?php } ?>
-                                <!-- <div class="pagination">
-                                    <a href="#" class="disabled">1</a>
-                                    <a href="#">2</a>
-                                    <span>...</span>
-                                    <a href="#">5</a>
-                                </div> -->
-                            </div>
-                            <?php
-                        }
-                    } else { 
-                        $args = [
-                        'post_type' => 'products',
-                        'tax_query' => [
-                        [
-                        'taxonomy' => 'category',
-                        'terms' => $cat->term_id
-                        ],
-                        ],
-                        ];
-                        $posts = get_posts($args);
-                        ?>
-                        <div class="manufacturer">
-                            <div class="manufacturer-description">
-                                <div class="logo">
-                                    <img src="<?php the_field('thumbnail', $cat); ?>" alt="">
-                                </div>
-                                <div class="info">
-                                    <span class="name"><?= $cat->name ?></span>
-                                    <div class="country">
-                                        Країна-виробник: 
-                                        <strong><?php the_field('country', $cat); ?></strong>
                                     </div>
-                                    <div class="product-length">
-                                        Всього позицій:
-                                        <span><?= count($posts); ?></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="manufacturer-text">
-                                <?php the_field('content', $cat); ?>
-                                <a href="#">>></a>
-                            </div>
-                            <div class="products">
-                                <?php foreach ($posts as $post) { ?>
-                                    <a href="<?= $post->guid; ?>" class="product-wrap">
-                                        <div class="product">
-                                            <div class="img">
-                                                <img src="<?php bloginfo( 'template_url' ); ?>/img/products/1.jpg" alt="">
+                                    <?php
+                                }
+                            } else { 
+                                $args = [
+                                'post_type' => 'products',
+                                'posts_per_page' => 8,
+                                'tax_query' => [
+                                [
+                                'taxonomy' => 'category',
+                                'terms' => $cat->term_id
+                                ],
+                                ],
+                                ];
+                                $posts = get_posts($args);
+                                ?>
+                                <div class="manufacturer">
+                                    <div class="manufacturer-description">
+                                        <div class="logo">
+                                            <img src="<?php the_field('thumbnail', $cat); ?>" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <span class="name"><?= $cat->name ?></span>
+                                            <div class="country">
+                                                Країна-виробник: 
+                                                <strong><?php the_field('country', $cat); ?></strong>
                                             </div>
-                                            <div class="name"><?= $post->post_title; ?></div>
+                                            <div class="product-length">
+                                                Всього позицій:
+                                                <span><?= count($posts); ?></span>
+                                            </div>
                                         </div>
-                                    </a>
-                                    <?php } ?>
+                                    </div>
+                                    <div class="manufacturer-text">
+                                        <div class="description" ng-class="{'active':open}">
+                                            <?php the_field('content', $cat); ?>
+                                        </div>
+                                        <a href="" class="more" ng-click="open=!open">Детальніше</a>
+                                    </div>
+                                    <div class="products">
+                                        <?php foreach ($posts as $post) { ?>
+                                            <a href="<?= $post->guid; ?>" class="product-wrap">
+                                                <div class="product">
+                                                    <div class="img">
+                                                        <img src="<?php bloginfo( 'template_url' ); ?>/img/products/1.jpg" alt="">
+                                                    </div>
+                                                    <div class="name"><?= $post->post_title; ?></div>
+                                                </div>
+                                            </a>
+                                            <?php } ?>
+                                        </div>
+                                        <?php 
+                                        if(have_rows('downloads', $cat)) :
+                                        $downloads = get_field('downloads', $cat); ?>
+                                        <div class="manufacturer-downloads">
+                                            <h2>Файли для завантаження:</h2>
+                                            <?php foreach ($downloads as $row) { ?>
+                                            <div class="file">
+                                                <i class="icon"></i>
+                                                <div class="details">
+                                                    <div class="title"><?= $row['title']; ?></div>
+                                                    <a href="<?= $row['file']; ?>" target="_blank">Завантажити</a>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                                <div class="manufacturer-downloads">
-                                    <h2>Файли для завантаження:</h2>
-                                    <div class="file">
-                                        <i class="icon"></i>
-                                        <div class="details">
-                                            <div class="title">Інструкція з укладання</div>
-                                            <a href="#">Завантажити</a>
-                                        </div>
-                                    </div>
-                                    <div class="file">
-                                        <i class="icon"></i>
-                                        <div class="details">
-                                            <div class="title">Сертифікат якості</div>
-                                            <a href="#">Завантажити</a>
-                                        </div>
-                                    </div>
-                                    <div class="file">
-                                        <i class="icon"></i>
-                                        <div class="details">
-                                            <div class="title">Сертифікат відповідності</div>
-                                            <a href="#">Завантажити</a>
-                                        </div>
-                                    </div>
-                                    <div class="file">
-                                        <i class="icon"></i>
-                                        <div class="details">
-                                            <div class="title">Інструкція з обслуговування</div>
-                                            <a href="#">Завантажити</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php }; ?>
                             </div>
                         </div>
-                        <?php }; ?>
                     </div>
                 </div>
+                <div class="logos">
+                    <div class="arrow left"></div>
+                    <div class="logo-box">
+                        <ul>
+                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/1.png" alt=""></li>
+                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/2.png" alt=""></li>
+                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/3.png" alt=""></li>
+                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/4.png" alt=""></li>
+                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/5.png" alt=""></li>
+                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/6.png" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="arrow right"></div>
+                </div>
             </div>
-        </div>
-        <div class="logos">
-            <div class="arrow left"></div>
-            <div class="logo-box">
-                <ul>
-                    <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/1.png" alt=""></li>
-                    <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/2.png" alt=""></li>
-                    <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/3.png" alt=""></li>
-                    <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/4.png" alt=""></li>
-                    <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/5.png" alt=""></li>
-                    <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/6.png" alt=""></li>
-                </ul>
-            </div>
-            <div class="arrow right"></div>
-        </div>
-    </div>
-</section>
-<?php get_footer( ); ?>
+        </section>
+        <?php get_footer( ); ?>
