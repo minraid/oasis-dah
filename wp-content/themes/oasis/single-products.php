@@ -88,7 +88,7 @@
                                 if($examples) {
                                     foreach ($examples as $example) { ?>
                                         <div class="photo">
-                                            <div class="thumbnail"><img src="<?php echo $example['sizes']['medium']; ?>" alt=""></div>
+                                            <div class="thumbnail" ng-click="showGallery=!showGallery"><img src="<?php echo $example['sizes']['medium']; ?>" alt=""></div>
                                         </div>
                                         <?php } 
                                     } ?>
@@ -98,7 +98,7 @@
                                     if($accessories) {
                                         foreach ($accessories as $accessory) { ?>
                                             <div class="photo">
-                                                <div class="thumbnail"><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
+                                                <div class="thumbnail" ng-click="showGallery=!showGallery"><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
                                             </div>
                                             <?php } 
                                         } ?>
@@ -122,7 +122,7 @@
                         </div>
                         <div class="arrow right"></div>
                     </div>
-                    <popup class="img" gallery='<?php echo json_encode($examples); ?>'></popup>
+                    <popup class="img" ng-class="{'active' : showGallery}" gallery='<?php echo json_encode($examples); ?>'></popup>
                 </div>
             </section>
             <?php get_footer( ); ?>

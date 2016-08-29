@@ -140,7 +140,14 @@ popup {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  overflow-y: auto; }
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s ;
+  -moz-transition: opacity 0.15s ;
+  -ms-transition: opacity 0.15s ;
+  -o-transition: opacity 0.15s ;
+  transition: opacity 0.15s ; }
   popup .popup-wrap {
     display: table;
     vertical-align: middle;
@@ -196,6 +203,9 @@ popup {
             left: -45px; }
           popup .popup-wrap .popup-box .popup-content .arrow.right {
             right: -45px; }
+  popup.active {
+    visibility: visible;
+    opacity: 1; }
 
 header .header-box {
   padding: 25px 0; }

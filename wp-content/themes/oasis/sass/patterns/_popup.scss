@@ -6,6 +6,9 @@ popup {
 	bottom: 0;
 	background-color: rgba(0,0,0,0.7);
 	overflow-y: auto;
+	visibility: hidden;
+	opacity: 0;
+	@include transition(opacity, 0.15s);
 	.popup-wrap {
 		display: table;
 		vertical-align: middle;
@@ -65,5 +68,9 @@ popup {
 				}
 			}
 		}
+	}
+	&.active {
+		visibility: visible;
+		opacity: 1;
 	}
 }
