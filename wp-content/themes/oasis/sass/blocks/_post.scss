@@ -2,6 +2,10 @@
 	h2 {
 		font-size: 26px;
 		margin-bottom: 16px;
+		a {
+			color: #000;
+			text-decoration: none;
+		}
 	}
 	.post-box {
 		.post-details {
@@ -18,6 +22,10 @@
 				float: left;
 				padding-left: 10px;
 				line-height: 20px;
+				a {
+					color: #7f92bf;
+					text-decoration: none;
+				}
 			}
 		}
 		.post-images {

@@ -505,6 +505,9 @@ header .menu-box {
 .post h2 {
   font-size: 26px;
   margin-bottom: 16px; }
+  .post h2 a {
+    color: #000;
+    text-decoration: none; }
 
 .post .post-box .post-details {
   color: #7f92bf;
@@ -522,6 +525,9 @@ header .menu-box {
     float: left;
     padding-left: 10px;
     line-height: 20px; }
+    .post .post-box .post-details .comments a {
+      color: #7f92bf;
+      text-decoration: none; }
 
 .post .post-box .post-images {
   margin: 0 -15px 20px; }
@@ -694,11 +700,12 @@ header .menu-box {
 .album-gallery {
   margin: 0 -15px; }
   .album-gallery .photo {
-    width: 25%;
+    width: 33.33%;
     float: left;
     padding: 15px;
     cursor: pointer; }
     .album-gallery .photo .thumbnail {
+      position: relative;
       -webkit-transition: all 0.25s ;
       -moz-transition: all 0.25s ;
       -ms-transition: all 0.25s ;
@@ -709,6 +716,17 @@ header .menu-box {
       .album-gallery .photo .thumbnail img {
         width: 100%;
         margin: 0; }
+      .album-gallery .photo .thumbnail .heading {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 18px;
+        line-height: 33px;
+        color: #fff;
+        text-align: center;
+        background-color: rgba(53, 53, 53, 0.9);
+        box-shadow: 0 -2px 7px rgba(0, 0, 0, 0.2); }
 
 .catalog .category {
   margin-bottom: 40px; }

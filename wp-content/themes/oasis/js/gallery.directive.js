@@ -54,7 +54,7 @@ function gallery($timeout, $rootScope){
 		scope.move = function(back) {
 			if(back && scope.i>0) {
 				scope.i--;
-				transform = 'translateX(' + scope.i*transformWidth + '%)';
+				transform = 'translateX(-' + scope.i*transformWidth + '%)';
 				list.css('transform', transform);
 			} else if(!back && scope.i < pages-1) {
 				scope.i++;

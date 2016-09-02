@@ -3,22 +3,27 @@
     <div class="container">
         <div class="content-box">
             <?php get_sidebar( ); ?>
-            <div class="content">
-                <div class="gallery">
-                    <?php 
-                    $args = ['post_type' => 'gallery', 'posts_per_page' => 8]; 
-                    $posts = get_posts($args);
-                    foreach($posts as $post) { ?>
-                        <div class="album">
-                            <a href="<?= $post->guid; ?>">
-                                <div class="thumbnail">
-                                    <?= get_the_post_thumbnail($post); ?>
-                                    <div class="heading"><?= $post->post_title; ?></div>
-                                </div>
-                            </a>
+            <div class="content" ng-controller="galleryCtrl as gallery">
+                <?php if(have_posts()) { 
+                    the_post();
+                    $gallery = get_field('gallery', $post->ID);
+                    $breadcrumbs = '<a href="/">Головна</a> > <a routerLink="/gallery">Галерея</a> > '.$post->post_title; ?>
+                    <div class="breadcrumbs">
+                        <?= $breadcrumbs; ?>
+                    </div>
+                    <h1><?= $post->post_title; ?></h1>
+                    <div class="album-gallery">
+                        <?php 
+                        foreach ($gallery as $key => $img) { ?>
+                        <div class="photo" ng-click='gallery.showGallery(<?php echo( json_encode($gallery) .",". $key); ?>);'>
+                            <div class="thumbnail">
+                                <img src="<?= $img['sizes']['medium']; ?>" alt="">
+                                <div class="heading"><?= $img['title']; ?></div>
+                            </div>
                         </div>
                         <?php } ?>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
             <div class="logos">
@@ -35,6 +40,7 @@
                 </div>
                 <div class="arrow right"></div>
             </div>
+            <popup class="img" gallery></popup>
         </div>
     </section>
     <?php get_footer( ); ?>

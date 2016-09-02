@@ -41,5 +41,6 @@
 <script src="<?php bloginfo( 'template_url' ); ?>/js/carousel.directive.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.directive.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/product.controller.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.controller.js"></script>
 </body>
 </html>
