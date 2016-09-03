@@ -28,9 +28,12 @@
                             <?php the_content( ); ?>
                         </div>
                     </div>
-                    <div class="next-wrap">
-                        <a href="#" class="next-link">Наступна новина</a>
-                    </div>
+                    <?php $prev_post = get_previous_post();
+                        if (!empty( $prev_post )): ?>
+                        <div class="next-wrap">
+                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="next-link">Наступна стаття</a>
+                        </div>
+                    <?php endif; ?>
                     <div class="comments">
                         <div class="comment-count">1 коментар </div>
                         <div class="comment">

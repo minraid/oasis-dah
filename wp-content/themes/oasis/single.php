@@ -4,33 +4,37 @@
         <div class="content-box">
             <?php get_sidebar( ); ?>
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <div class="content">
-                <div class="breadcrumbs">
-                    <a href="/">Головна</a>
-                    >
-                    <a href="/news">Новини</a>
-                    >
-                    <?php the_title( ); ?>
-                </div>
-                <div class="post">
-                    <h2><?php the_title(); ?></h2>
-                    <div class="post-box">
-                        <div class="post-details">
-                            <div class="date"><?php the_date( ); ?></div>
-                            <div class="comments"><?php comments_number( ); ?></div>
-                        </div>
-                        <div class="post-images">
-                            <div class="img-wrap">
-                                <?php the_post_thumbnail( ); ?>
+                <div class="content">
+                    <div class="breadcrumbs">
+                        <a href="/">Головна</a>
+                        >
+                        <a href="/news">Новини</a>
+                        >
+                        <?php the_title( ); ?>
+                    </div>
+                    <div class="post">
+                        <h2><?php the_title(); ?></h2>
+                        <div class="post-box">
+                            <div class="post-details">
+                                <div class="date"><?php the_date( ); ?></div>
+                                <div class="comments"><?php comments_number( ); ?></div>
+                            </div>
+                            <div class="post-images">
+                                <div class="img-wrap">
+                                    <?php the_post_thumbnail( ); ?>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <?php the_content( ); ?>
                             </div>
                         </div>
-                        <div class="post-content">
-                            <?php the_content( ); ?>
+                        <?php
+                        $prev_post = get_previous_post();
+                        if (!empty( $prev_post )): ?>
+                        <div class="next-wrap">
+                        <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="next-link">Наступна новина</a>
                         </div>
-                    </div>
-                    <div class="next-wrap">
-                        <a href="#" class="next-link">Наступна новина</a>
-                    </div>
+                    <?php endif; ?>
                     <div class="comments">
                         <div class="comment-count">1 коментар </div>
                         <div class="comment">
@@ -67,26 +71,26 @@
                 </div>
             </div>
             <!-- post -->
-            <?php endwhile; ?>
-            <!-- post navigation -->
-            <?php else: ?>
-            <!-- no posts found -->
-            <?php endif; ?>
-        </div>
-        <div class="logos">
-            <div class="arrow left"></div>
-            <div class="logo-box">
-                <ul>
-                    <li><img src="/img/logo/1.png" alt=""></li>
-                    <li><img src="/img/logo/2.png" alt=""></li>
-                    <li><img src="/img/logo/3.png" alt=""></li>
-                    <li><img src="/img/logo/4.png" alt=""></li>
-                    <li><img src="/img/logo/5.png" alt=""></li>
-                    <li><img src="/img/logo/6.png" alt=""></li>
-                </ul>
-            </div>
-            <div class="arrow right"></div>
-        </div>
+        <?php endwhile; ?>
+        <!-- post navigation -->
+    <?php else: ?>
+        <!-- no posts found -->
+    <?php endif; ?>
+</div>
+<div class="logos">
+    <div class="arrow left"></div>
+    <div class="logo-box">
+        <ul>
+            <li><img src="/img/logo/1.png" alt=""></li>
+            <li><img src="/img/logo/2.png" alt=""></li>
+            <li><img src="/img/logo/3.png" alt=""></li>
+            <li><img src="/img/logo/4.png" alt=""></li>
+            <li><img src="/img/logo/5.png" alt=""></li>
+            <li><img src="/img/logo/6.png" alt=""></li>
+        </ul>
     </div>
+    <div class="arrow right"></div>
+</div>
+</div>
 </section>
 <?php get_footer( ); ?>

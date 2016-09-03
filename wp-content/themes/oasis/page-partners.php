@@ -11,16 +11,16 @@
                 <div class="links">
                     <div class="link-wrap">
                         <a routerLink="/page" class="link">
-                            <i class="icon"></i>
+                            <i class="icon dealer" icon="'dealer'"></i>
                             <span>Дилерам</span>
-                            <i class="icon"></i>
+                            <i class="icon arrow" icon="'arrow-red'"></i>
                         </a>
                     </div>
                     <div class="link-wrap">
                         <a routerLink="/page" class="link">
-                            <i class="icon"></i>
+                            <i class="icon architect" icon="'architect'"></i>
                             <span>Архітекторам та будівельникам</span>
-                            <i class="icon"></i>
+                            <i class="icon arrow" icon="'arrow-red'"></i>
                         </a>
                     </div>
                 </div>

@@ -117,9 +117,34 @@
 			text-align: center;
 			vertical-align: middle;
 			font-size: 18px;
-			line-height: 125px;
 			text-decoration: none;
 			color: #353535;
+			padding: 15px;
+			.icon {
+				max-width: 40px;
+				margin-bottom: 10px;
+				fill: #dc1f26;
+				stroke-width: 2px;
+				svg {
+					max-height: 40px;
+				}
+				&.dealer {
+					svg {
+						fill: none;
+						stroke: #dc1f26;
+						.head {
+							stroke: none;
+							fill: #dc1f26;
+						}
+					}
+				}
+				&.arrow {
+					max-width: 20px;
+				}
+			}
+			span {
+				display: block;
+			}
 		}
 	}
 }

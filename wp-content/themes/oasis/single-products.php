@@ -18,6 +18,7 @@
                             if($cat->category_parent != 0) {
                                 $title = $cat->name.' '.$post->post_title;
                                 $breadcrumbs .= '<a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a> > ';
+                                $backLink = get_category_link($cat->term_id);
                             }
                         }
                         if(!$title) {
@@ -105,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="back-link" back-link>Повернутися назад</a>
+                            <a href="<?= $backLink; ?>" class="back-link">Повернутися назад</a>
                         </div>
                     </div>
                     <div class="logos">

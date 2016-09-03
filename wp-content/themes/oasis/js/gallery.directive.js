@@ -15,24 +15,15 @@ function gallery($timeout, $rootScope){
 	function link(scope, element, attrs) {
 		scope.i = 0;
 		var list = element.find('ul'),
-			body = angular.element(document.querySelector('body')),
-			transformWidth,
-			pages;
+		body = angular.element(document.querySelector('body')),
+		transformWidth,
+		pages;
 
 		$rootScope.$on('popup', function(e, gallery, index){
 			scope.i = index;
 			scope.images = gallery;
 			activate();
 		})
-
-		element.on('click', function(){
-			element.removeClass('active');
-			toogleBody();
-		})
-
-		angular.element(document.querySelector('.popup-body')).on('click', function(e){
-			e.stopPropagation();
-		});
 
 		function activate() {
 			transformWidth = 100 / scope.images.length,
@@ -51,7 +42,8 @@ function gallery($timeout, $rootScope){
 			body.hasClass('popup') ? body.removeClass('popup') : body.addClass('popup');
 		}
 
-		scope.move = function(back) {
+		
+		function move(back) {
 			if(back && scope.i>0) {
 				scope.i--;
 				transform = 'translateX(-' + scope.i*transformWidth + '%)';
@@ -80,5 +72,22 @@ function gallery($timeout, $rootScope){
 				}, 300)
 			}
 		}
+
+		function close() {
+			element.removeClass('active');
+			toogleBody();
+		}
+
+		scope.close = close;
+		scope.move = move;
+
+		element.on('click', function(){
+			close();
+		})
+
+		angular.element(document.querySelector('.popup-body')).on('click', function(e){
+			e.stopPropagation();
+		});
+
 	}
 }

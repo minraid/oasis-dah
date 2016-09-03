@@ -40,6 +40,8 @@ aside + .content {
 	color: #696960;
 	font: $PTSanitalic;
 	font-size: 16px;
+	padding-left: 20px;
+	background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 64.7"><path class="cls-1" d="M96,5.6a1.25,1.25,0,0,1,1.24-1.24h78.51a1.24,1.24,0,1,1,0,2.49H97.25A1.26,1.26,0,0,1,96,5.6Z" transform="translate(-96 26.75)"/><path class="cls-1" d="M127.49,37.57,96.38,6.46a1.25,1.25,0,0,1,0-1.75l31.11-31.1a1.23,1.23,0,0,1,1.75,0,1.23,1.23,0,0,1,0,1.75L99,5.6l30.23,30.24a1.23,1.23,0,0,1,0,1.75,1.27,1.27,0,0,1-.88.36A1.21,1.21,0,0,1,127.49,37.57Z" transform="translate(-96 26.75)"/></svg>') left 5px/14px no-repeat;
 }
 .next-link {
 	color: #303ec1;
@@ -47,4 +49,6 @@ aside + .content {
 	font-size: 14px;
 	line-height: 22px;
 	float: right;
+	padding-right: 20px;
+	background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 64.7"><path fill="#303ec1" d="M175.75,6.84H97.24a1.24,1.24,0,1,1,0-2.49h78.51a1.24,1.24,0,1,1,0,2.49Z" transform="translate(-96 26.75)"/><path fill="#303ec1" d="M144.64,38a1.27,1.27,0,0,1-.88-.36,1.23,1.23,0,0,1,0-1.75L174,5.6,143.76-24.64a1.23,1.23,0,0,1,0-1.75,1.23,1.23,0,0,1,1.75,0l31.11,31.1a1.25,1.25,0,0,1,0,1.75L145.51,37.57A1.21,1.21,0,0,1,144.64,38Z" transform="translate(-96 26.75)"/></svg>')  right 5px/14px no-repeat;
 }

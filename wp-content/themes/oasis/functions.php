@@ -116,4 +116,9 @@ function register_menu() {
   register_nav_menu('sidebar-menu',__( 'Sidebar Menu' ));
 }
 
+function oasis_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'oasis_excerpt_more' );
+
 ?>
