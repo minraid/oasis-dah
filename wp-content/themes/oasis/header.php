@@ -15,6 +15,7 @@
 					<div class="address">Україна, с. Зимна Вода, 81110, вул. Тичини, 2А (навпроти «Епіцентру»)</div>
 				</div>
 				<div class="phones">
+					<i class="icon" icon="'phone'"></i>
 					<div class="phone">+38 (067) 31 31 548</div>
 					<div class="phone">+38 (067) 67 29 827</div>
 					<div class="shedule">Пн-Пт з 09:00 до 17:00</div>
@@ -28,8 +29,12 @@
 				</div>
 				<div class="social-langs">
 					<div class="social">
-						<div class="g"></div>
-						<div class="fb"></div>
+						<a href="#" target="_blank" class="g">
+							<i class="icon" icon="'google'"></i>
+						</a>
+						<a href="#" target="_blank" class="fb">
+							<i class="icon" icon="'facebook'"></i>
+						</a>
 					</div>
 					<div class="langs">
 						<div class="lang">РУ</div>

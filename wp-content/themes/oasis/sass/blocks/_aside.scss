@@ -42,9 +42,10 @@ aside {
 					border: none;
 				}
 				&.current-menu-item, &.current-menu-parent {
-					padding-left: 25px;
 					>a {
 						color: #dc1f26;
+						padding-left: 25px;
+						background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.72 61.41"><defs><style>.cls-1{fill:#d91f24;}</style></defs><title>Asset 3</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><polygon class="cls-1" points="0.03 0 30.72 30.69 0 61.41 15.36 30.72 0.03 0"/></g></g></svg>') left top/10px no-repeat;
 					}
 					ul.sub-menu {
 						display: block;

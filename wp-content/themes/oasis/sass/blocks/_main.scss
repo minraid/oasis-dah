@@ -128,10 +128,23 @@
 	width: 100%;
 	@include clearfix;
 	.arrow {
-		padding: 20px;
+		width: 40px;
+		height: 40px;
 		background-color: #dad4d4;
 		float: left;
 		margin-top: 7px;
+		text-align: center;
+		cursor: pointer;
+		.icon {
+			width: 16px;
+			line-height: 38px;
+			svg {
+				stroke-width: 6px;
+				stroke: #fff;
+				fill: none;
+				vertical-align: middle;
+			}
+		}
 	}
 	.right {
 		float: right;

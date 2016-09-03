@@ -207,6 +207,12 @@ popup {
     visibility: visible;
     opacity: 1; }
 
+i.icon {
+  display: inline-block;
+  vertical-align: middle; }
+  i.icon svg {
+    width: 100%; }
+
 header .header-box {
   padding: 25px 0; }
   header .header-box .logo {
@@ -238,6 +244,13 @@ header .header-box {
     width: 20%;
     padding-left: 15px;
     box-sizing: border-box; }
+    header .header-box .phones .icon {
+      width: 20px;
+      margin-left: -32px;
+      margin-top: 5px;
+      float: left; }
+      header .header-box .phones .icon svg {
+        fill: #999494; }
     header .header-box .phones .phone {
       font-size: 24px;
       line-height: 30px;
@@ -285,6 +298,24 @@ header .menu-box {
     header .menu-box .social-langs .social {
       float: left;
       padding: 0 15px; }
+      header .menu-box .social-langs .social .g, header .menu-box .social-langs .social .fb {
+        float: left; }
+      header .menu-box .social-langs .social .g {
+        margin-right: 12px; }
+      header .menu-box .social-langs .social .icon {
+        width: 24px;
+        line-height: 40px;
+        cursor: pointer; }
+        header .menu-box .social-langs .social .icon svg {
+          fill: #7a7272;
+          vertical-align: middle;
+          -webkit-transition: fill 0.15s ease-in-out;
+          -moz-transition: fill 0.15s ease-in-out;
+          -ms-transition: fill 0.15s ease-in-out;
+          -o-transition: fill 0.15s ease-in-out;
+          transition: fill 0.15s ease-in-out; }
+        header .menu-box .social-langs .social .icon:hover svg {
+          fill: #fff; }
     header .menu-box .social-langs .langs {
       float: right;
       padding-left: 15px;
@@ -436,10 +467,21 @@ header .menu-box {
     display: block;
     clear: both; }
   .logos .arrow {
-    padding: 20px;
+    width: 40px;
+    height: 40px;
     background-color: #dad4d4;
     float: left;
-    margin-top: 7px; }
+    margin-top: 7px;
+    text-align: center;
+    cursor: pointer; }
+    .logos .arrow .icon {
+      width: 16px;
+      line-height: 38px; }
+      .logos .arrow .icon svg {
+        stroke-width: 6px;
+        stroke: #fff;
+        fill: none;
+        vertical-align: middle; }
   .logos .right {
     float: right; }
   .logos .logo-box {
@@ -1259,12 +1301,12 @@ aside {
         transition: color 0.25s ; }
       aside > .menu ul.menu > li:last-child {
         border: none; }
-      aside > .menu ul.menu > li.current-menu-item, aside > .menu ul.menu > li.current-menu-parent {
-        padding-left: 25px; }
-        aside > .menu ul.menu > li.current-menu-item > a, aside > .menu ul.menu > li.current-menu-parent > a {
-          color: #dc1f26; }
-        aside > .menu ul.menu > li.current-menu-item ul.sub-menu, aside > .menu ul.menu > li.current-menu-parent ul.sub-menu {
-          display: block; }
+      aside > .menu ul.menu > li.current-menu-item > a, aside > .menu ul.menu > li.current-menu-parent > a {
+        color: #dc1f26;
+        padding-left: 25px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.72 61.41"><defs><style>.cls-1{fill:#d91f24;}</style></defs><title>Asset 3</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><polygon class="cls-1" points="0.03 0 30.72 30.69 0 61.41 15.36 30.72 0.03 0"/></g></g></svg>') left top/10px no-repeat; }
+      aside > .menu ul.menu > li.current-menu-item ul.sub-menu, aside > .menu ul.menu > li.current-menu-parent ul.sub-menu {
+        display: block; }
       aside > .menu ul.menu > li ul.sub-menu {
         display: none;
         margin-top: 15px;

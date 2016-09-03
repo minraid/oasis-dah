@@ -24,7 +24,9 @@
                 </div>
             </div>
             <div class="logos">
-                <div class="arrow left"></div>
+                <div class="arrow left">
+                    <i class="icon" icon="'arrow-left'"></i>
+                </div>
                 <div class="logo-box">
                     <ul>
                         <li><img src="<?php bloginfo('template_url'); ?>/img/logo/1.png" alt=""></li>
@@ -35,7 +37,9 @@
                         <li><img src="<?php bloginfo('template_url'); ?>/img/logo/6.png" alt=""></li>
                     </ul>
                 </div>
-                <div class="arrow right"></div>
+                <div class="arrow right">
+                    <i class="icon" icon="'arrow-right'"></i>
+                </div>
             </div>
         </div>
     </section>

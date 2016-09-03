@@ -30,6 +30,15 @@ header {
 			width: 20%;
 			padding-left: 15px;
 			box-sizing: border-box;
+			.icon {
+				width: 20px;
+				margin-left: -32px;
+				margin-top: 5px;
+				float: left;
+				svg {
+					fill: #999494;
+				}
+			}
 			.phone {
 				font-size: 24px;
 				line-height: 30px;
@@ -80,6 +89,27 @@ header {
 			.social{
 				float: left;
 				padding: 0 15px;
+				.g, .fb {
+					float: left;
+				}
+				.g {
+					margin-right: 12px;
+				}
+				.icon {
+					width: 24px;
+					line-height: 40px;
+					cursor: pointer;
+					svg {
+						fill: #7a7272;
+						vertical-align: middle;
+						@include transition(fill, .15s, 'ease-in-out')
+					}
+					&:hover {
+						svg {
+							fill: #fff;
+						}
+					}
+				}
 			}
 			.langs {
 				float: right;
