@@ -703,6 +703,7 @@ header .menu-box {
     margin: 0 20px;
     overflow: hidden; }
   .logos ul {
+    list-style: none;
     min-width: 100%;
     -webkit-transition: transform 0.5s ease-in-out;
     -moz-transition: transform 0.5s ease-in-out;

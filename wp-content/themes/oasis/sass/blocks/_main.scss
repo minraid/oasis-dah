@@ -181,6 +181,7 @@
 		overflow: hidden;
 	}
 	ul {
+		list-style: none
 		min-width: 100%;
 		@include transition(transform, .5s, 'ease-in-out');
 		@include clearfix;
