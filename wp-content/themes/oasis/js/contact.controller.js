@@ -19,6 +19,7 @@
             vm.sent = false;
             vm.error = false;
             vm.loading = true;
+            vm.data.action = 'contact';
             $http.get('/wp-admin/admin-ajax.php', vm.data).then(function(res) {
                 vm.loading = false;
                 vm.sent = true;
