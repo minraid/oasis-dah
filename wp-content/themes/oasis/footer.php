@@ -36,6 +36,7 @@
 	</div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="https://code.angularjs.org/1.5.8/i18n/angular-locale_uk-ua.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/backLink.directive.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/carousel.directive.js"></script>
@@ -44,5 +45,6 @@
 <script src="<?php bloginfo( 'template_url' ); ?>/js/product.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/contact.controller.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/comments.controller.js"></script>
 </body>
 </html>

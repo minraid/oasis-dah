@@ -6,17 +6,36 @@ add_action( 'init', 'register_gallery' );
 add_action( 'init', 'register_menu' );
 add_action( 'wp_ajax_nopriv_contact', 'contact' );
 add_action( 'wp_ajax_contact', 'contact' );
+add_action( 'wp_ajax_nopriv_comment', 'comment' );
+add_action( 'wp_ajax_comment', 'comment' );
 add_theme_support( 'post-thumbnails' );
 
 function contact(){
 	$mail = [
-		'subject' => 'Нове звернення на сайті' . $_REQUEST['subject'] ? 'на тему:' . $_REQUEST['subject'] : '',
-		'message' => '<p>Ім`я: '.$_REQUEST['name'].'</p><p>Email: '.$_REQUEST['email'].'</p><p>Повідомлення: '.$_REQUEST['message'].'</p>' 
+	'subject' => 'Нове звернення на сайті' . $_REQUEST['subject'] ? 'на тему:' . $_REQUEST['subject'] : '',
+	'message' => '<p>Ім`я: '.$_REQUEST['name'].'</p><p>Email: '.$_REQUEST['email'].'</p><p>Повідомлення: '.$_REQUEST['message'].'</p>' 
 	];
-	$res = mail( 'miniraid@gmail.com', $mail['subject'], $mail['message'] );
+	$res = wp_mail( get_field('email', 'options'), $mail['subject'], $mail['message'] );
 	wp_die( $res );
 }
 
+function comment(){
+	$time = current_time('mysql');
+
+	$data = array(
+		'comment_post_ID' => $_REQUEST['ID'],
+		'comment_author' => $_REQUEST['comment_author'],
+		'comment_author_email' => $_REQUEST['comment_author_email'],
+		'comment_author_url' => $_REQUEST['comment_author_url'],
+		'comment_content' => $_REQUEST['comment_content'],
+		'comment_date' => $time,
+		'comment_approved' => 1,
+		);
+
+	$id = wp_insert_comment($data);
+	$comment = get_comment($id);
+	wp_die( json_encode($comment) );
+}
 
 function acf_excerpt($text) {
 	if ( '' != $text ) {
@@ -46,7 +65,7 @@ function register_products() {
 			'not_found_in_trash' => 'В смітнику товар не знайдено',
 			'parent_item_colon'  => '',
 			'menu_name'          => 'Товари',
-		),
+			),
 		'description'         => '',
 		'public'              => false,
 		'publicly_queryable'  => true,
@@ -58,7 +77,7 @@ function register_products() {
 		'supports'            => array('title','editor','thumbnail'),
 		'taxonomies'          => array('category'),
 		'rewrites'            => array('slug'=>'products')
-	);
+		);
 	register_post_type('products', $args );
 }
 
@@ -78,7 +97,7 @@ function register_gallery() {
 			'not_found_in_trash' => 'В смітнику альбом не знайдено',
 			'parent_item_colon'  => '',
 			'menu_name'          => 'Галерея',
-		),
+			),
 		'description'         => '',
 		'public'              => false,
 		'publicly_queryable'  => true,
@@ -89,7 +108,7 @@ function register_gallery() {
 		'menu_icon'           => 'dashicons-format-gallery', 
 		'supports'            => array('title','thumbnail'),
 		'rewrites'            => array('slug'=>'gallery')
-	);
+		);
 	register_post_type('gallery', $args );
 }
 
@@ -109,7 +128,7 @@ function register_articles() {
 			'not_found_in_trash' => 'В смітнику статтю не знайдено',
 			'parent_item_colon'  => '',
 			'menu_name'          => 'Статті',
-		),
+			),
 		'description'         => '',
 		'public'              => false,
 		'publicly_queryable'  => true,
@@ -119,17 +138,17 @@ function register_articles() {
 		'menu_position'       => 6,
 		'menu_icon'           => 'dashicons-edit', 
 		'supports'            => array('title','editor','thumbnail')
-	);
+		);
 	register_post_type('articles', $args );
 }
 
 function register_menu() {
-  register_nav_menu('header-menu',__( 'Header Menu' ));
-  register_nav_menu('sidebar-menu',__( 'Sidebar Menu' ));
+	register_nav_menu('header-menu',__( 'Header Menu' ));
+	register_nav_menu('sidebar-menu',__( 'Sidebar Menu' ));
 }
 
 function oasis_excerpt_more( $more ) {
-    return '...';
+	return '...';
 }
 add_filter( 'excerpt_more', 'oasis_excerpt_more' );
 

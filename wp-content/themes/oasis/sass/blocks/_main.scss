@@ -176,18 +176,23 @@
 	}
 	.logo-box {
 		float: left;
-		width: 1050px;
+		width: calc(100% - 120px);
 		margin: 0 20px;
 		overflow: hidden;
 	}
 	ul {
-		display: table;
 		min-width: 100%;
 		@include transition(transform, .5s, 'ease-in-out');
+		@include clearfix;
 		li {
-			display: table-cell;
-			width: 20%;
+			float: left;
 			text-align: center;
+			padding: 0 10px;
+			line-height: 60px;
+			img {
+				max-width: 100%;
+				vertical-align: middle;
+			}
 		}
 	}
 }

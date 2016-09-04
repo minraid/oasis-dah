@@ -80,9 +80,17 @@
 				@include clearfix;
 				.author-img {
 					float: left;
-					padding: 20px;
+					width: 40px;
+					height: 40px;
 					background: #dad4d4;
 					margin-right: 10px;
+					text-align: center;
+					overflow: hidden;
+					.icon {
+						width: 25px;
+						line-height: 35px;
+						fill: #fff;
+					}
 				}
 				.comment-info {
 					float: left;
@@ -107,6 +115,7 @@
 		.comment-form {
 			background: #f9f9f9;
 			padding: 20px;
+			@include clearfix;
 			h2 {
 				font-size: 18px;
 				line-height: 22px;
@@ -122,6 +131,13 @@
 				border: 1px solid #dad4d4;
 				box-sizing: border-box;
 				margin-bottom: 10px;
+				outline: none;
+				&:focus {
+					border-color: #7f92bf;
+				}
+				&.ng-touched.ng-invalid {
+					border-color: #dc1f26;
+				}
 			}
 			textarea {
 				height: 80px;
@@ -134,14 +150,34 @@
 					line-height: 25px;
 					color: #696565;
 				}
+				.social {
+					float: right;
+					.icon {
+						width: 25px;
+						line-height: 25px;
+						border-radius: 5px;
+						overflow: hidden;
+						cursor: pointer;
+						svg {
+							vertical-align: top;
+						}
+					}
+				}
 			}
 			.author-form {
 				@include clearfix;
 				.author-img {
 					float: left;
-					padding: 20px;
+					width: 40px;
+					height: 40px;
 					background: #dad4d4;
 					margin-right: 10px;
+					text-align: center;
+					.icon {
+						width: 25px;
+						line-height: 35px;
+						fill: #fff;
+					}
 				}
 				.author-inputs {
 					float: left;
@@ -156,12 +192,59 @@
 				margin-left: 50px;
 				font-size: 16px;
 				line-height: 34px;
+				min-height: 34px;
+				min-width: 165px;
 				color: #fff;
 				padding: 0 45px;
 				border: none;
 				background-color: #dc1f26;
 				margin-top: 15px;
 				cursor: pointer;
+				float: left;
+				position: relative;
+				@include transition(background-color, .15s);
+				&:hover {
+					background-color: #ce1d24	
+				}
+				&.disabled {
+					background-color: #dad4d4;
+					cursor: default;
+				}
+				.icon {
+					visibility: hidden;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 20px;
+					fill: #fff;
+					opacity: 0;
+					@include transition(opacity, .1s)
+					&.loading {
+						visibility: visible;
+						opacity: 1;
+						animation: loading 1.5s ease-in-out infinite;
+					}
+				}
+			}
+			.message {
+				display: none;
+				margin-left: 20px;
+				margin-top: 15px;
+				font-size: 14px;
+				line-height: 34px;
+				color: #dc1f26;
+				float: left;
+				&.success, &.error {
+					display: block;
+				}
+				&.success {
+					color: #20b116;
+				}
+			}
+			&.ng-submitted.ng-invalid {
+				.message {
+					display: block;
+				}
 			}
 		}
 	}

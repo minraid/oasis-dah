@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Oasis Dah</title>
 	<link rel="stylesheet" href="<?php bloginfo('template_url' ); ?>/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
 	<header>
@@ -31,6 +32,12 @@
 		<div class="menu-box">
 			<div class="container">
 				<div class="menu">
+					<div class="menuBtn" ng-click="open=!open" ng-class="{'open':open}">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
 					<?php wp_nav_menu(array('theme_location' => 'header-menu') ); ?>
 				</div>
 				<div class="social-langs">
@@ -42,10 +49,7 @@
 							<i class="icon" icon="'facebook'"></i>
 						</a>
 					</div>
-					<div class="langs">
-						<div class="lang">РУ</div>
-						<div class="lang active">УКР</div>
-					</div>
+						<?php echo qtranxf_generateLanguageSelectCode('text'); ?>
 				</div>
 			</div>
 		</div>
