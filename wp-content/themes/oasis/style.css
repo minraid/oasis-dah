@@ -517,13 +517,20 @@ header .menu-box {
     float: right; }
   .logos .logo-box {
     float: left;
-    width: 1090px;
-    padding: 0 20px; }
+    width: 1050px;
+    margin: 0 20px;
+    overflow: hidden; }
   .logos ul {
     display: table;
-    width: 100%; }
+    min-width: 100%;
+    -webkit-transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out; }
     .logos ul li {
       display: table-cell;
+      width: 20%;
       text-align: center; }
 
 .news .post {
@@ -833,12 +840,22 @@ header .menu-box {
       transition: max-height 0.25s ease-in-out; }
       .catalog .category .cat-description .description.active {
         max-height: 300px; }
+        .catalog .category .cat-description .description.active + .more:after {
+          border-top: none;
+          border-bottom: 8px solid #4f4f4d; }
     .catalog .category .cat-description .more {
       float: right;
       font: 14px/1rem PTSansItalic, sans-serif;
       font-size: 16px;
       line-height: 22px;
       color: #4f4f4d; }
+      .catalog .category .cat-description .more:after {
+        content: '';
+        display: inline-block;
+        margin-left: 5px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 8px solid #4f4f4d; }
 
 .catalog .manufacturer {
   border-bottom: 1px solid #dad4d4;
@@ -862,7 +879,7 @@ header .menu-box {
     .catalog .manufacturer .manufacturer-description .info {
       width: 75%;
       float: left;
-      padding: 20px 0 0 15px; }
+      padding-left: 15px; }
       .catalog .manufacturer .manufacturer-description .info .name {
         display: block;
         font: 14px/1rem PTSansBold, sans-serif;
@@ -911,12 +928,27 @@ header .menu-box {
       transition: max-height 0.25s ease-in-out; }
       .catalog .manufacturer .manufacturer-text .description.active {
         max-height: 300px; }
+        .catalog .manufacturer .manufacturer-text .description.active + .arrow:after {
+          border-top: none;
+          border-bottom: 8px solid #dad4d4; }
     .catalog .manufacturer .manufacturer-text .more {
       float: right;
       font: 14px/1rem PTSansItalic, sans-serif;
       font-size: 16px;
       line-height: 22px;
-      color: #dad4d4; }
+      color: #dad4d4;
+      padding-right: 20px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 64.7"><path fill="#dad4d4" d="M175.75,6.84H97.24a1.24,1.24,0,1,1,0-2.49h78.51a1.24,1.24,0,1,1,0,2.49Z" transform="translate(-96 26.75)"/><path fill="#dad4d4" d="M144.64,38a1.27,1.27,0,0,1-.88-.36,1.23,1.23,0,0,1,0-1.75L174,5.6,143.76-24.64a1.23,1.23,0,0,1,0-1.75,1.23,1.23,0,0,1,1.75,0l31.11,31.1a1.25,1.25,0,0,1,0,1.75L145.51,37.57A1.21,1.21,0,0,1,144.64,38Z" transform="translate(-96 26.75)"/></svg>') right 5px/14px no-repeat; }
+      .catalog .manufacturer .manufacturer-text .more.arrow {
+        background: none;
+        padding-right: 0; }
+        .catalog .manufacturer .manufacturer-text .more.arrow:after {
+          content: '';
+          display: inline-block;
+          margin-left: 5px;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 8px solid #dad4d4; }
   .catalog .manufacturer .products {
     margin: 0 -15px; }
     .catalog .manufacturer .products:after {
@@ -993,7 +1025,11 @@ header .menu-box {
       float: left;
       margin-bottom: 30px; }
       .catalog .manufacturer .manufacturer-downloads .file .icon {
-        float: left; }
+        float: left;
+        width: 30px;
+        fill: #9f9f9f;
+        margin-right: 10px;
+        line-height: 40px; }
       .catalog .manufacturer .manufacturer-downloads .file .details {
         float: left; }
         .catalog .manufacturer .manufacturer-downloads .file .details .title {
@@ -1175,7 +1211,8 @@ header .menu-box {
   margin-bottom: 20px; }
 
 .contacts .adress {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  max-width: 300px; }
   .contacts .adress p {
     margin: 0; }
 
@@ -1250,6 +1287,10 @@ header .menu-box {
   .contact-form form.contact {
     background-color: #f9f9f9;
     padding: 20px; }
+    .contact-form form.contact:after {
+      content: '';
+      display: block;
+      clear: both; }
     .contact-form form.contact .inputs:after {
       content: '';
       display: block;
@@ -1274,20 +1315,86 @@ header .menu-box {
       font-size: 16px;
       line-height: 22px;
       border: 1px solid #dad4d4;
+      outline: none;
       box-sizing: border-box;
       margin-bottom: 10px; }
+      .contact-form form.contact .input-form textarea:focus, .contact-form form.contact .input-form input:focus {
+        border-color: #7f92bf; }
+      .contact-form form.contact .input-form textarea.ng-touched.ng-invalid, .contact-form form.contact .input-form input.ng-touched.ng-invalid {
+        border-color: #dc1f26; }
     .contact-form form.contact .input-form textarea {
       height: 80px;
       resize: none; }
     .contact-form form.contact button {
       font-size: 16px;
       line-height: 34px;
+      min-height: 34px;
+      min-width: 165px;
       color: #fff;
       padding: 0 45px;
       border: none;
       background-color: #dc1f26;
       margin-top: 15px;
-      cursor: pointer; }
+      cursor: pointer;
+      float: left;
+      position: relative;
+      -webkit-transition: background-color 0.15s ;
+      -moz-transition: background-color 0.15s ;
+      -ms-transition: background-color 0.15s ;
+      -o-transition: background-color 0.15s ;
+      transition: background-color 0.15s ; }
+      .contact-form form.contact button:hover {
+        background-color: #ce1d24; }
+      .contact-form form.contact button.disabled {
+        background-color: #dad4d4;
+        cursor: default; }
+      .contact-form form.contact button .icon {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        fill: #fff;
+        opacity: 0;
+        -webkit-transition: opacity 0.1s ;
+        -moz-transition: opacity 0.1s ;
+        -ms-transition: opacity 0.1s ;
+        -o-transition: opacity 0.1s ;
+        transition: opacity 0.1s ; }
+        .contact-form form.contact button .icon.loading {
+          visibility: visible;
+          opacity: 1;
+          animation: loading 1.5s ease-in-out infinite; }
+    .contact-form form.contact .message {
+      display: none;
+      margin-left: 20px;
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 34px;
+      color: #dc1f26;
+      float: left; }
+      .contact-form form.contact .message.success, .contact-form form.contact .message.error {
+        display: block;
+        visibility: visible;
+        opacity: 1; }
+      .contact-form form.contact .message.success {
+        color: #20b116; }
+      .contact-form form.contact .message.hidden {
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.15s ;
+        -moz-transition: all 0.15s ;
+        -ms-transition: all 0.15s ;
+        -o-transition: all 0.15s ;
+        transition: all 0.15s ; }
+    .contact-form form.contact.ng-submitted.ng-invalid .message {
+      display: block; }
+
+@keyframes loading {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(165px); } }
 
 aside {
   float: left;

@@ -59,7 +59,7 @@
                                     <?php $text = get_field('content', $category); 
                                     echo acf_excerpt($text);
                                     ?>
-                                    <a href="<?= get_category_link($category->term_id); ?>" class="more" ng-click="open=!open">Детальніше</a>
+                                    <a href="<?= get_category_link($category->term_id); ?>" class="more">Детальніше</a>
                                 </div>
                                 <div class="products">
                                     <?php foreach ($posts as $post) { ?>
@@ -109,7 +109,7 @@
                                         <div class="description" ng-class="{'active':open}">
                                             <?php the_field('content', $cat); ?>
                                         </div>
-                                        <a href="" class="more" ng-click="open=!open">Детальніше</a>
+                                        <a href="" class="more arrow" ng-click="open=!open">Детальніше</a>
                                     </div>
                                     <div class="products">
                                         <?php foreach ($posts as $post) { ?>
@@ -130,7 +130,7 @@
                                             <h2>Файли для завантаження:</h2>
                                             <?php foreach ($downloads as $row) { ?>
                                             <div class="file">
-                                                <i class="icon"></i>
+                                                <i class="icon" icon="'file'"></i>
                                                 <div class="details">
                                                     <div class="title"><?= $row['title']; ?></div>
                                                     <a href="<?= $row['file']; ?>" target="_blank">Завантажити</a>
@@ -144,21 +144,8 @@
                                 <?php }; ?>
                             </div>
                         </div>
+                        <?php get_sidebar( 'logos' ); ?>
                     </div>
-                </div>
-                <div class="logos">
-                    <div class="arrow left"></div>
-                    <div class="logo-box">
-                        <ul>
-                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/1.png" alt=""></li>
-                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/2.png" alt=""></li>
-                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/3.png" alt=""></li>
-                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/4.png" alt=""></li>
-                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/5.png" alt=""></li>
-                            <li><img src="<?php bloginfo( 'template_url' ); ?>/img/logo/6.png" alt=""></li>
-                        </ul>
-                    </div>
-                    <div class="arrow right"></div>
                 </div>
             </div>
         </section>

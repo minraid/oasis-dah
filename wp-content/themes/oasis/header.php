@@ -12,12 +12,18 @@
 				<a href="/" class="logo"></a>
 				<div class="details">
 					<div class="moto">Продаж та монтаж елітних покрівельних матеріалів</div>
-					<div class="address">Україна, с. Зимна Вода, 81110, вул. Тичини, 2А (навпроти «Епіцентру»)</div>
+					<div class="address">
+						<?php the_field('address', 'options'); ?>
+					</div>
 				</div>
 				<div class="phones">
 					<i class="icon" icon="'phone'"></i>
-					<div class="phone">+38 (067) 31 31 548</div>
-					<div class="phone">+38 (067) 67 29 827</div>
+					<div class="phone">
+						<?php the_field('phone', 'options'); ?>
+					</div>
+					<div class="phone">
+						<?php the_field('phone_2', 'options'); ?>
+					</div>
 					<div class="shedule">Пн-Пт з 09:00 до 17:00</div>
 				</div>
 			</div>
@@ -29,10 +35,10 @@
 				</div>
 				<div class="social-langs">
 					<div class="social">
-						<a href="#" target="_blank" class="g">
+						<a href="<?php the_field('google', 'options') ?>" target="_blank" class="g">
 							<i class="icon" icon="'google'"></i>
 						</a>
-						<a href="#" target="_blank" class="fb">
+						<a href="<?php the_field('facebook', 'options') ?>" target="_blank" class="fb">
 							<i class="icon" icon="'facebook'"></i>
 						</a>
 					</div>

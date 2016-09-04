@@ -7,112 +7,74 @@
                 <div class="contacts">
                     <h1>ТЗоВ «Оазис Дах»</h1>
                     <div class="adress">
-                        <p>Україна, с.Зимна Вода, 81110, вул. Тичини, 2А</p>
-                        <p>(навпроти «Епіцентру»)</p>
+                        <?php the_field('address', 'options'); ?>
                     </div>
                     <div class="staff">
+                        <?php
+                        if( have_rows('contacts', 'options') ):
+                            while ( have_rows('contacts', 'options') ) : the_row();
+                                $img = get_sub_field('photo');
+                        ?>
                         <div class="contact">
-                        <div class="img-box"><img src="<?php bloginfo( 'template_url' ); ?>/img/contact/1.jpg" alt=""></div>
+                            <div class="img-box">
+                                <img src="<?= $img['sizes']['thumbnail']; ?>">
+                            </div>
                             <div class="contact-details">
-                                <div class="name">Михайло Іванишин</div>
+                                <div class="name"><?php the_sub_field('name'); ?></div>
                                 <div class="details">
-                                    <p>+38 (096) 73-80-979</p>
-                                    <p>Керівник стратегічного розвитку</p>
+                                    <p><?php the_sub_field('phone'); ?></p>
+                                    <p><?php the_sub_field('position'); ?></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="contact">
-                        <div class="img-box"><img src="<?php bloginfo( 'template_url' ); ?>/img/contact/2.jpg" alt=""></div>
-                            <div class="contact-details">
-                                <div class="name">Володимир Жук</div>
-                                <div class="details">
-                                    <p>+38 (096) 73-80-979</p>
-                                    <p>Керівник стратегічного розвитку</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contact">
-                        <div class="img-box"><img src="<?php bloginfo( 'template_url' ); ?>/img/contact/3.jpg" alt=""></div>
-                            <div class="contact-details">
-                                <div class="name">Оксана Пилипенко</div>
-                                <div class="details">
-                                    <p>+38 (096) 73-80-979</p>
-                                    <p>Керівник стратегічного розвитку</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contact">
-                        <div class="img-box"><img src="<?php bloginfo( 'template_url' ); ?>/img/contact/4.jpg" alt=""></div>
-                            <div class="contact-details">
-                                <div class="name">Остап Яковина</div>
-                                <div class="details">
-                                    <p>+38 (096) 73-80-979</p>
-                                    <p>Керівник стратегічного розвитку</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contact">
-                        <div class="img-box"><img src="<?php bloginfo( 'template_url' ); ?>/img/contact/5.jpg" alt=""></div>
-                            <div class="contact-details">
-                                <div class="name">Галина Олійник</div>
-                                <div class="details">
-                                    <p>+38 (096) 73-80-979</p>
-                                    <p>Керівник стратегічного розвитку</p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        endwhile;
+                        endif;
+                        ?>
                         <div class="email">
                             <i class="icon"></i>
                             <div class="contact-details">
                                 <div class="details">
                                     <div class="title">E-mail</div>
-                                    <p>oazisdah@gmail.com</p>
+                                    <p><?php the_field('email', 'options'); ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="contact-form" ng-controller="contactCtrl as vm">
                     <h2>Написати нам</h2>
                     <div class="hint">* - поля, обов’язкові для заповнення</div>
-                    <form class="contact">
+                    <form class="contact" name="contact" ng-submit="vm.send(contact)" novalidate>
                         <div class="inputs">
                             <div class="input-form">
                                 <label for="">Ваше ім’я *</label>
-                                <input type="text">
+                                <input type="text" ng-model="vm.data.name" required>
                             </div>
                             <div class="input-form">
                                 <label for="">Ваш Email*</label>
-                                <input type="text">
+                                <input type="email" ng-model="vm.data.email" required>
                             </div>
                         </div>
                         <div class="input-form">
                             <label for="">Тема Вашого звернення</label>
-                            <input type="text">
+                            <input type="text" ng-model="vm.data.subject">
                         </div>
                         <div class="input-form">
                             <label for="">Ваше повідомлення*</label>
-                            <textarea></textarea>
+                            <textarea ng-model="vm.data.message" required></textarea>
                         </div>
-                        <button type="submit">Надіслати</button>
+                        <button type="submit" class="disabled" ng-class="{'disabled' : contact.$invalid}">
+                            <span ng-if="!vm.loading">Надіслати</span>
+                            <i class="icon" ng-class="{'loading': vm.loading}" icon="'arrow-red'"></i>
+                        </button>
+                        <div class="message">Заповніть, будь ласка, обов`язкові поля</div>
+                        <div class="message hidden" ng-class="{'hidden' : !vm.error && !vm.sent, 'error' : vm.error, 'success' : vm.sent}" ng-bind="vm.sent ? 'Ваше повідомлення надіслано! Дякуємо!' : 'Виникла помилка! Будь ласка, спробуйте ще.'"></div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="logos">
-            <div class="arrow left"></div>
-            <div class="logo-box">
-                <ul>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/1.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/2.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/3.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/4.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/5.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/6.png" alt=""></li>
-                </ul>
-            </div>
-            <div class="arrow right"></div>
-        </div>
+        <?php get_sidebar( 'logos' ); ?>
     </div>
 </section>
 <?php get_footer( ); ?>

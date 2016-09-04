@@ -77,20 +77,7 @@
         <!-- no posts found -->
     <?php endif; ?>
 </div>
-<div class="logos">
-    <div class="arrow left"></div>
-    <div class="logo-box">
-        <ul>
-            <li><img src="/img/logo/1.png" alt=""></li>
-            <li><img src="/img/logo/2.png" alt=""></li>
-            <li><img src="/img/logo/3.png" alt=""></li>
-            <li><img src="/img/logo/4.png" alt=""></li>
-            <li><img src="/img/logo/5.png" alt=""></li>
-            <li><img src="/img/logo/6.png" alt=""></li>
-        </ul>
-    </div>
-    <div class="arrow right"></div>
-</div>
+<?php get_sidebar( 'logos' ); ?>
 </div>
 </section>
 <?php get_footer( ); ?>

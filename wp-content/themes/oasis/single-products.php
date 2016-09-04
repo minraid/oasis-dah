@@ -42,88 +42,81 @@
                                     <div class="arrow right" ng-click="move(false)"></div>
                                     <div class="carousel-inner">
                                         <ul class="img-list" style="width: <?= (count($carousel)*25).'%'; ?>">
-                                            <?php foreach ($carousel as $color) { ?>
-                                                <li style="width: <?= (100/count($carousel)).'%'; ?>">
-                                                    <div class="img-box" ng-click="color= {img:'<?php echo $color['sizes']['thumbnail']; ?>', title: '<?php echo $color['title']; ?>'}">
-                                                        <img src="<?php echo $color['sizes']['thumbnail']; ?>" alt="<?php echo $color['title']; ?>">
-                                                    </div>
-                                                </li>
-                                                <?php } ?>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-details">
-                                    <h1 ng-bind="'<?= $title; ?> '+(color.title || '<?= $carousel[0]['title']; ?>')"></h1>
-                                    <div class="tabs" ng-init="show='description'">
-                                        <div class="tab" ng-class="{'active' : show == 'description'}" ng-click="show='description'">Опис</div>
-                                        <div class="tab" ng-class="{'active' : show == 'examples'}" ng-click="show='examples'">Приклади застосування</div>
-                                        <div class="tab" ng-class="{'active' : show == 'accessories'}" ng-click="show='accessories'">Аксесуари</div>
-                                    </div>
-                                    <div class="product-specifications">
-                                        <?php 
-                                        if(have_rows('product_properties')) :
-                                            $table = get_field('product_properties'); ?>
-                                        <div class="table">
-                                            <div class="labels">
-                                                <?php foreach ($table as $row) {
-                                                    echo('<div class="td">'.$row['property'].'</div>');
-                                                } ?>
-                                            </div>
-                                            <div class="values">
-                                                <?php foreach ($table as $row) {
-                                                    echo('<div class="td">'.$row['value'].'</div>');
-                                                } ?>
-                                            </div>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div ng-switch="show">
-                            <div class="product-description" ng-switch-when="description">
-                                <?php the_content( ); } ?>
-                            </div>
-                            <div class="use-exmaples" ng-switch-when="examples">
-                                <?php $examples = get_field('examples');
-                                if($examples) {
-                                    foreach ($examples as $key => $example) { ?>
-                                        <div class="photo">
-                                            <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($examples) .",". $key); ?>);'><img src="<?php echo $example['sizes']['medium']; ?>" alt=""></div>
-                                        </div>
-                                        <?php } 
-                                    } ?>
-                                </div>
-                                <div class="accessories" ng-switch-when="accessories">
-                                    <?php $accessories = get_field('accessories');
-                                    if($accessories) {
-                                        foreach ($accessories as $key => $accessory) { ?>
-                                            <div class="photo">
-                                                <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($accessories) .",". $key); ?>);'><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
-                                            </div>
-                                            <?php } 
-                                        } ?>
+                                            <?php 
+                                            if(!empty($carousel)) {
+                                                foreach ($carousel as $color) { ?>
+                                                    <li style="width: <?= (100/count($carousel)).'%'; ?>">
+                                                        <div class="img-box" ng-click="color= {img:'<?php echo $color['sizes']['thumbnail']; ?>', title: '<?php echo $color['title']; ?>'}">
+                                                            <img src="<?php echo $color['sizes']['thumbnail']; ?>" alt="<?php echo $color['title']; ?>">
+                                                        </div>
+                                                    </li>
+                                                    <?php 
+                                                }
+                                            }
+                                            ?>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <a href="<?= $backLink; ?>" class="back-link">Повернутися назад</a>
+                            <div class="product-details">
+                                <h1 ng-bind="'<?= $title; ?> '+(color.title || '<?= $carousel[0]['title']; ?>')"></h1>
+                                <div class="tabs" ng-init="show='description'">
+                                    <div class="tab" ng-class="{'active' : show == 'description'}" ng-click="show='description'">Опис</div>
+                                    <div class="tab" ng-class="{'active' : show == 'examples'}" ng-click="show='examples'">Приклади застосування</div>
+                                    <div class="tab" ng-class="{'active' : show == 'accessories'}" ng-click="show='accessories'">Аксесуари</div>
+                                </div>
+                                <div class="product-specifications">
+                                    <?php 
+                                    if(have_rows('product_properties')) :
+                                        $table = get_field('product_properties'); ?>
+                                    <div class="table">
+                                        <div class="labels">
+                                            <?php foreach ($table as $row) {
+                                                echo('<div class="td">'.$row['property'].'</div>');
+                                            } ?>
+                                        </div>
+                                        <div class="values">
+                                            <?php foreach ($table as $row) {
+                                                echo('<div class="td">'.$row['value'].'</div>');
+                                            } ?>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
-                    <div class="logos">
-                        <div class="arrow left"></div>
-                        <div class="logo-box">
-                            <ul>
-                                <li><img src="<?php bloginfo('template_url'); ?>/img/logo/1.png" alt=""></li>
-                                <li><img src="<?php bloginfo('template_url'); ?>/img/logo/2.png" alt=""></li>
-                                <li><img src="<?php bloginfo('template_url'); ?>/img/logo/3.png" alt=""></li>
-                                <li><img src="<?php bloginfo('template_url'); ?>/img/logo/4.png" alt=""></li>
-                                <li><img src="<?php bloginfo('template_url'); ?>/img/logo/5.png" alt=""></li>
-                                <li><img src="<?php bloginfo('template_url'); ?>/img/logo/6.png" alt=""></li>
-                            </ul>
+                    <div ng-switch="show">
+                        <div class="product-description" ng-switch-when="description">
+                            <?php the_content( ); } ?>
                         </div>
-                        <div class="arrow right"></div>
-                    </div>
-                    <popup class="img" gallery></popup>
-                </div>
-            </section>
-            <?php get_footer( ); ?>
+                        <div class="use-exmaples" ng-switch-when="examples">
+                            <?php $examples = get_field('examples');
+                            if($examples) {
+                                foreach ($examples as $key => $example) { ?>
+                                    <div class="photo">
+                                        <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($examples) .",". $key); ?>);'>
+    <img src="<?php echo $example['sizes']['medium']; ?>" alt=""></div>
+</div>
+<?php } 
+} ?>
+</div>
+<div class="accessories" ng-switch-when="accessories">
+    <?php $accessories = get_field('accessories');
+    if($accessories) {
+        foreach ($accessories as $key => $accessory) { ?>
+            <div class="photo">
+                <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($accessories) .",". $key); ?>);'><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
+</div>
+<?php } 
+} ?>
+</div>
+</div>
+</div>
+<a href="<?= $backLink; ?>" class="back-link">Повернутися назад</a>
+</div>
+</div>
+<?php get_sidebar( 'logos' ); ?>
+<popup class="img" gallery></popup>
+</div>
+</section>
+<?php get_footer( ); ?>

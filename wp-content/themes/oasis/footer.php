@@ -25,7 +25,7 @@
 			</div>
 			<div class="address">
 				<h4>ТзОВ «Оазис Дах»</h4>
-				<p>Україна, с.Зимна Вода, 81110, вул. Тичини, 2А (навпроти «Епіцентру»)</p>
+				<p><?php the_field('address', 'options'); ?></p>
 				<p class="copyright">ТзОВ «Оазис Дах» © Всі права захищено</p>
 			</div>
 		</div>
@@ -43,5 +43,6 @@
 <script src="<?php bloginfo( 'template_url' ); ?>/js/icon.directive.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/product.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.controller.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/contact.controller.js"></script>
 </body>
 </html>

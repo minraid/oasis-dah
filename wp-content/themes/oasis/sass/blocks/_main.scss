@@ -176,14 +176,17 @@
 	}
 	.logo-box {
 		float: left;
-		width: 1090px;
-		padding: 0 20px;
+		width: 1050px;
+		margin: 0 20px;
+		overflow: hidden;
 	}
 	ul {
 		display: table;
-		width: 100%;
+		min-width: 100%;
+		@include transition(transform, .5s, 'ease-in-out');
 		li {
 			display: table-cell;
+			width: 20%;
 			text-align: center;
 		}
 	}

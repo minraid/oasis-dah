@@ -4,7 +4,19 @@ add_action( 'init', 'register_products' );
 add_action( 'init', 'register_articles' );
 add_action( 'init', 'register_gallery' );
 add_action( 'init', 'register_menu' );
+add_action( 'wp_ajax_nopriv_contact', 'contact' );
+add_action( 'wp_ajax_contact', 'contact' );
 add_theme_support( 'post-thumbnails' );
+
+function contact(){
+	$mail = [
+		'subject' => 'Нове звернення на сайті' . $_REQUEST['subject'] ? 'на тему:' . $_REQUEST['subject'] : '',
+		'message' => '<p>Ім`я: '.$_REQUEST['name'].'</p><p>Email: '.$_REQUEST['email'].'</p><p>Повідомлення: '.$_REQUEST['message'].'</p>' 
+	];
+	$res = wp_mail( 'miniraid@gmail.com', $mail['subject'], $mail['message'] );
+	wp_die( $res );
+}
+
 
 function acf_excerpt($text) {
 	if ( '' != $text ) {

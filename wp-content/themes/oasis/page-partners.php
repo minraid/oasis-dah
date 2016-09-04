@@ -10,14 +10,14 @@
                     <?php }; ?>
                 <div class="links">
                     <div class="link-wrap">
-                        <a routerLink="/page" class="link">
+                        <a href="/dealer" class="link">
                             <i class="icon dealer" icon="'dealer'"></i>
                             <span>Дилерам</span>
                             <i class="icon arrow" icon="'arrow-red'"></i>
                         </a>
                     </div>
                     <div class="link-wrap">
-                        <a routerLink="/page" class="link">
+                        <a href="/architect" class="link">
                             <i class="icon architect" icon="'architect'"></i>
                             <span>Архітекторам та будівельникам</span>
                             <i class="icon arrow" icon="'arrow-red'"></i>
@@ -26,20 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="logos">
-            <div class="arrow left"></div>
-            <div class="logo-box">
-                <ul>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/1.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/2.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/3.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/4.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/5.png" alt=""></li>
-                    <li><img src="<?php bloginfo('template_url'); ?>/img/logo/6.png" alt=""></li>
-                </ul>
-            </div>
-            <div class="arrow right"></div>
-        </div>
+        <?php get_sidebar( 'logos' ); ?>
     </div>
 </section>
 <?php get_footer( ); ?>
