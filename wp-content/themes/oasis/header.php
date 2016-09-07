@@ -25,7 +25,9 @@
 					<div class="phone">
 						<?php the_field('phone_2', 'options'); ?>
 					</div>
-					<div class="shedule">Пн-Пт з 09:00 до 17:00</div>
+					<div class="shedule">
+						<?php the_field('schedule', 'options'); ?>
+					</div>
 				</div>
 			</div>
 		</div>

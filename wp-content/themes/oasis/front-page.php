@@ -1,17 +1,34 @@
 <?php get_header( ); ?>
 <section class="content-inner">
-    <div class="banner">
-        <div class="img"></div>
-        <div class="cover-handler">
-            <div class="container">
-                <div class="cover">
-                    <div class="text-box">
-                        <h2>Елітні покрівельні матеріали найвищої якості</h2>
-                        <p>Продаж, монтаж, доставка та надання довідкової інформації про елітні покрівельні матеріали високої якості</p>
+    <div class="banner" slider>
+        <?php $banners = get_field('banners', 'options');
+        if(!empty($banners)) {
+            echo '<ul style="width: '.(count($banners)*100).'%">';
+            foreach ($banners as $banner) { ?>
+                <li style="width:<?= (100/count($banners)); ?>%">
+                    <div class="img">
+                        <img src="<?= $banner['img']['url']; ?>"/>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <div class="cover-handler">
+                        <div class="container">
+                            <div class="arrow left" ng-click="slide(true)">
+                                <i class="icon" icon="'arrow-left'"></i>
+                            </div>
+                            <div class="cover">
+                                <div class="text-box">
+                                    <h2><?= $banner['heading']; ?></h2>
+                                    <p><?= $banner['text'] ?></p>
+                                </div>
+                            </div>
+                            <div class="arrow right" ng-click="slide(false)">
+                                <i class="icon" icon="'arrow-right'"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <?php
+            }
+        } ?>
     </div>
     <div class="container">
         <div class="content-box">

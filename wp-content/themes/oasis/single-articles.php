@@ -36,7 +36,7 @@
                     <?php endif; ?>
                     <div id="comments" class="comments" ng-controller="commentsCtrl as vm">
                         <div class="comment-count"><?php comments_number( ); ?></div>
-                        <div class="comments-handler" ng-init='vm.init(<?php echo json_encode(get_comments(["post_id"=>$post->id])); ?>, <?= $post->ID; ?>)'>
+                        <div class="comments-handler" ng-init='vm.init(<?php echo json_encode(get_comments(["post_id"=>$post->ID])); ?>, <?= $post->ID; ?>)'>
                             <div class="comment" ng-repeat="comment in vm.comments| orderBy:'comment_date'">
                                 <div class="comment-details">
                                     <div class="author-img">

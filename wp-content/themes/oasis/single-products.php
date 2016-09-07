@@ -36,7 +36,7 @@
                         <div class="product-main">
                             <div class="product-gallery">
                                 <?php $carousel = get_field('color'); ?>
-                                <div class="main-img"><img ng-src="{{color.img || '<?= $carousel[0]['sizes']['medium']; ?>'}}"></div>
+                                <div class="main-img" ng-click='product.showGallery(<?= json_encode( $carousel ); ?>, color.index || 0);'><img ng-src="{{color.img || '<?= $carousel[0]['sizes']['medium']; ?>'}}"></div>
                                 <div class="carousel" carousel>
                                     <div class="arrow left" ng-click="move(true)"></div>
                                     <div class="arrow right" ng-click="move(false)"></div>
@@ -44,9 +44,9 @@
                                         <ul class="img-list" style="width: <?= (count($carousel)*25).'%'; ?>">
                                             <?php 
                                             if(!empty($carousel)) {
-                                                foreach ($carousel as $color) { ?>
+                                                foreach ($carousel as $index => $color) { ?>
                                                     <li style="width: <?= (100/count($carousel)).'%'; ?>">
-                                                        <div class="img-box" ng-click="color= {img:'<?php echo $color['sizes']['thumbnail']; ?>', title: '<?php echo $color['title']; ?>'}">
+                                                        <div class="img-box" ng-click="color= {img:'<?php echo $color['sizes']['thumbnail']; ?>', title: '<?php echo $color['title']; ?>', index: <?= $index; ?>}">
                                                             <img src="<?php echo $color['sizes']['thumbnail']; ?>" alt="<?php echo $color['title']; ?>">
                                                         </div>
                                                     </li>

@@ -3,25 +3,11 @@
 		<div class="container">
 			<div class="products">
 				<h4>Продукція</h4>
-				<ul>
-					<li><a href="/catalog">Керамічна черепиця</a></li>
-					<li><a href="/catalog">Фальцеві дахи</a></li>
-					<li><a href="/catalog">Водостічні системи</a></li>
-					<li><a href="/catalog">Мансардні вікна</a></li>
-					<li><a href="/catalog">Аксесуари для даху</a></li>
-					<li><a href="/catalog">Клінкер</a></li>
-				</ul>
+				<?php wp_nav_menu(array('theme_location' => 'footer-products') ); ?>
 			</div>
 			<div class="menu">
 				<h4>Меню</h4>
-				<ul>
-					<li><a href="/gallery">Галерея</a></li>
-					<li><a href="/news">Новини</a></li>
-					<li><a href="/news">Статті</a></li>
-					<li><a href="/page">Для партнерів</a></li>
-					<li><a href="/page">Послуги</a></li>
-					<li><a href="/contact">Контакти</a></li>
-				</ul>
+				<?php wp_nav_menu(array('theme_location' => 'footer-menu') ); ?>
 			</div>
 			<div class="address">
 				<h4>ТзОВ «Оазис Дах»</h4>
@@ -40,11 +26,13 @@
 <script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/backLink.directive.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/carousel.directive.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/slider.directive.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.directive.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/icon.directive.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/product.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/contact.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/comments.controller.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaE5gtN_UQMu8hCgXZyUMuBemyNj2cQDk&callback=initMap"></script>
 </body>
 </html>

@@ -145,6 +145,8 @@ function register_articles() {
 function register_menu() {
 	register_nav_menu('header-menu',__( 'Header Menu' ));
 	register_nav_menu('sidebar-menu',__( 'Sidebar Menu' ));
+	register_nav_menu('footer-products',__( 'Footer Products' ));
+	register_nav_menu('footer-menu',__( 'Footer Menu' ));
 }
 
 function oasis_excerpt_more( $more ) {

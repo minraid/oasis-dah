@@ -41,6 +41,7 @@
                             </div>
                         </div>
                     </div>
+                    <div id="map"></div>
                 </div>
                 <div class="contact-form" ng-controller="contactCtrl as vm">
                     <h2>Написати нам</h2>
@@ -77,4 +78,19 @@
         <?php get_sidebar( 'logos' ); ?>
     </div>
 </section>
+<script>
+    function initMap() {
+        var mapDiv = document.getElementById('map');
+        var myLatLng = {lat: 49.824509, lng: 23.905083};
+        var map = new google.maps.Map(mapDiv, {
+            center: myLatLng,
+            zoom: 14
+        });
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+        });
+    }
+</script>
 <?php get_footer( ); ?>
