@@ -1,9 +1,14 @@
 .banner {
 	position: relative;
 	border-bottom: 50px solid #353535;
+	width: 100%;
+	overflow: hidden;
 	ul {
 		@include transition(transform, .5s, 'ease-in-out');
 		@include clearfix;
+		li {
+			float: left;
+		}
 	}
 	.img {
 		height: 448px;
@@ -38,6 +43,11 @@
 			padding: 0 50px;
 			@include center-vertical;
 			@include transform(skew(10deg) translateY(-40%));
+			opacity: 1;
+			@include transition(opacity, 0.25s)
+			&.changing {
+				opacity: 0;
+			}
 			h2 {
 				font: $PTSansbold;
 				font-size: 24px;

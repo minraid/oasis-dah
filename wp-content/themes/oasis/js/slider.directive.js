@@ -6,24 +6,39 @@ slider.$inject = ['$timeout'];
 function slider($timeout){
 	var directive = {
         link: link,
-        restrict: 'A'
+        restrict: 'A',
+        templateUrl: '/wp-content/themes/oasis/js/slider.directive.html',
+        scope: {
+            banners: '=slider'
+        }
     };
     return directive;
 
     function link(scope, element, attrs) {
-        
+
         var list = element.find('ul'),
-            listWidth = parseInt(list.css('width')),
+            listWidth = scope.banners.length*100,
             transformWidth = 100 / listWidth * 100,
-            i = 0,
             pages = Math.ceil(100/transformWidth);
+            i = 0;
+            scope.i = 0;
         
         scope.slide = function(back) {
             if(back && i>0) {
+                scope.onChange = true;
+                $timeout(function(){
+                    scope.i--;
+                    scope.onChange = false;
+                }, 250)
                 i--;
                 transform = 'translateX(' + i*transformWidth + '%)';
                 list.css('transform', transform);
             } else if(!back && i < pages-1) {
+                scope.onChange = true;
+                $timeout(function(){
+                    scope.i++
+                    scope.onChange = false;
+                }, 250)
                 i++;
                 transform = 'translateX(-' + i*transformWidth + '%)';
                 list.css('transform', transform);

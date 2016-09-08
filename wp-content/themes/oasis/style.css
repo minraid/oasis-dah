@@ -325,6 +325,7 @@ popup {
       popup .popup-wrap .popup-box .popup-content {
         position: relative; }
         popup .popup-wrap .popup-box .popup-content .img-box {
+          background: #fff;
           box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
           overflow: hidden; }
           popup .popup-wrap .popup-box .popup-content .img-box ul {
@@ -341,8 +342,9 @@ popup {
               float: left;
               width: 100%; }
           popup .popup-wrap .popup-box .popup-content .img-box img {
-            width: 100%;
-            margin: 0; }
+            display: block;
+            max-width: 100%;
+            margin: 0 auto; }
         popup .popup-wrap .popup-box .popup-content .arrow {
           position: absolute;
           top: 50%;
@@ -534,7 +536,9 @@ header .menu-box {
 
 .banner {
   position: relative;
-  border-bottom: 50px solid #353535; }
+  border-bottom: 50px solid #353535;
+  width: 100%;
+  overflow: hidden; }
   .banner ul {
     -webkit-transition: transform 0.5s ease-in-out;
     -moz-transition: transform 0.5s ease-in-out;
@@ -545,6 +549,8 @@ header .menu-box {
       content: '';
       display: block;
       clear: both; }
+    .banner ul li {
+      float: left; }
   .banner .img {
     height: 448px;
     overflow: hidden;
@@ -592,7 +598,15 @@ header .menu-box {
       -moz-transform: skew(10deg) translateY(-40%);
       -ms-transform: skew(10deg) translateY(-40%);
       -o-transform: skew(10deg) translateY(-40%);
-      transform: skew(10deg) translateY(-40%); }
+      transform: skew(10deg) translateY(-40%);
+      opacity: 1;
+      -webkit-transition: opacity 0.25s ;
+      -moz-transition: opacity 0.25s ;
+      -ms-transition: opacity 0.25s ;
+      -o-transition: opacity 0.25s ;
+      transition: opacity 0.25s ; }
+      .banner .cover .text-box.changing {
+        opacity: 0; }
       .banner .cover .text-box h2 {
         font: 14px/1rem PTSansBold, sans-serif;
         font-size: 24px;

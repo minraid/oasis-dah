@@ -1,0 +1,23 @@
+<ul ng-style="{width: (banners.length*100)+'%'}">
+    <li ng-style="{width:(100/banners.length)+'%'}" ng-repeat="banner in banners">
+        <div class="img">
+            <img ng-src="{{banner.img.url}}"/>
+        </div>
+    </li>
+</ul>
+<div class="cover-handler">
+    <div class="container">
+        <div class="arrow left" ng-click="slide(true)">
+            <i class="icon" icon="'arrow-left'"></i>
+        </div>
+        <div class="cover">
+            <div class="text-box" ng-class="{'changing': onChange}">
+                <h2 ng-bind="banners[i].heading"></h2>
+                <p ng-bind="banners[i].text"></p>
+            </div>
+        </div>
+        <div class="arrow right" ng-click="slide(false)">
+            <i class="icon" icon="'arrow-right'"></i>
+        </div>
+    </div>
+</div>

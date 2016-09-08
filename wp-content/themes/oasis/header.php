@@ -12,7 +12,7 @@
 			<div class="container">
 				<a href="/" class="logo"></a>
 				<div class="details">
-					<div class="moto">Продаж та монтаж елітних покрівельних матеріалів</div>
+					<div class="moto"><?php the_field('moto', 'options'); ?></div>
 					<div class="address">
 						<?php the_field('address', 'options'); ?>
 					</div>
