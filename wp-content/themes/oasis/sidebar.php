@@ -12,7 +12,7 @@
 		];
 		query_posts( $args );
 		if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<h4><span><?= '[:uk]Останні новини[:ru]Последние новости[:]'; ?></span></h4>
+		<h4><span>[:ua]Останні новини[:ru]Последние новости[:]</span></h4>
 		<div class="thumbnail">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 		</div>
@@ -25,7 +25,7 @@
 			<div class="date"><?php echo get_the_date(); ?></div>
 			<div class="comments"><a href="<?php the_permalink(); ?>"><?php comments_number(); ?></a></div>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="link"><!--:uk-->Читати далі<!--:--><!--:ru-->Читать далее<!--:--></a>
+		<a href="<?php the_permalink(); ?>" class="link"><!--:ua-->Читати далі<!--:--><!--:ru-->Читать далее<!--:--></a>
 	<?php endwhile; 
 	endif;
 	wp_reset_query(); ?>
