@@ -12,14 +12,14 @@
                     <div class="link-wrap">
                         <a href="/dealer" class="link">
                             <i class="icon dealer" icon="'dealer'"></i>
-                            <span>Дилерам</span>
+                            <span><!--:uk-->Дилерам<!--:--><!--:ru-->Диллерам<!--:--></span>
                             <i class="icon arrow" icon="'arrow-red'"></i>
                         </a>
                     </div>
                     <div class="link-wrap">
                         <a href="/architect" class="link">
                             <i class="icon architect" icon="'architect'"></i>
-                            <span>Архітекторам та будівельникам</span>
+                            <span><!--:uk-->Архітекторам та будівельникам<!--:--><!--:ru-->Архитекторам и строителям<!--:--></span>
                             <i class="icon arrow" icon="'arrow-red'"></i>
                         </a>
                     </div>

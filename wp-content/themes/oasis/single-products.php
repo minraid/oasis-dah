@@ -7,7 +7,7 @@
                 <?php if(have_posts()) { 
                     the_post();
                     $categories = get_the_category($post->ID);
-                    $breadcrumbs = '<a href="/">Головна</a> > ';
+                    $breadcrumbs = '<a href="/">[:uk]Головна[:ru]Главная[:]</a> > ';
                     if(count($categories)>0) {
                         foreach ($categories as $cat) {
                             if($cat->category_parent == 0) {
@@ -61,7 +61,7 @@
                             <div class="product-details">
                                 <h1 ng-bind="'<?= $title; ?> '+(color.title || '<?= $carousel[0]['title']; ?>')"></h1>
                                 <div class="tabs" ng-init="show='description'">
-                                    <div class="tab" ng-class="{'active' : show == 'description'}" ng-click="show='description'">Опис</div>
+                                    <div class="tab" ng-class="{'active' : show == 'description'}" ng-click="show='description'">[:uk]Опис[:ru]Описание[:]</div>
                                     <div class="tab" ng-class="{'active' : show == 'examples'}" ng-click="show='examples'">Приклади застосування</div>
                                     <div class="tab" ng-class="{'active' : show == 'accessories'}" ng-click="show='accessories'">Аксесуари</div>
                                 </div>

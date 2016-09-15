@@ -5,7 +5,7 @@
             <?php get_sidebar( ); ?>
             <div class="content">
                 <div class="contacts">
-                    <h1>ТЗоВ «Оазис Дах»</h1>
+                    <h1><!--:uk-->ТзОВ «Оазис Дах»<!--:--><!--:ru-->ООО «Оазис Дах»<!--:--></h1>
                     <div class="adress">
                         <?php the_field('address', 'options'); ?>
                     </div>
@@ -44,32 +44,32 @@
                     <div id="map"></div>
                 </div>
                 <div class="contact-form" ng-controller="contactCtrl as vm">
-                    <h2>Написати нам</h2>
-                    <div class="hint">* - поля, обов’язкові для заповнення</div>
+                    <h2><!--:uk-->Написати нам<!--:--><!--:ru-->Написать нам<!--:--></h2>
+                    <div class="hint"><!--:uk-->* - поля, обов’язкові для заповнення<!--:--><!--:ru-->* - поля, обязательные для заполнения<!--:--></div>
                     <form class="contact" name="contact" ng-submit="vm.send(contact)" novalidate>
                         <div class="inputs">
                             <div class="input-form">
-                                <label for="">Ваше ім’я *</label>
+                                <label for=""><!--:uk-->Ваше ім’я *<!--:--><!--:ru-->Ваше имя *<!--:--></label>
                                 <input type="text" ng-model="vm.data.name" required>
                             </div>
                             <div class="input-form">
-                                <label for="">Ваш Email*</label>
+                                <label for=""><!--:uk-->Ваш Email*<!--:--><!--:ru-->Ваш Email *<!--:--></label>
                                 <input type="email" ng-model="vm.data.email" required>
                             </div>
                         </div>
                         <div class="input-form">
-                            <label for="">Тема Вашого звернення</label>
+                            <label for=""><!--:uk-->Тема Вашого звернення<!--:--><!--:ru-->Тема Вашего обращения<!--:--></label>
                             <input type="text" ng-model="vm.data.subject">
                         </div>
                         <div class="input-form">
-                            <label for="">Ваше повідомлення*</label>
+                            <label for=""><!--:uk-->Ваше повідомлення *<!--:--><!--:ru-->Ваше сообщение *<!--:--></label>
                             <textarea ng-model="vm.data.message" required></textarea>
                         </div>
                         <button type="submit" class="disabled" ng-class="{'disabled' : contact.$invalid}">
-                            <span ng-if="!vm.loading">Надіслати</span>
+                            <span ng-if="!vm.loading"><!--:uk-->Надіслати<!--:--><!--:ru-->Отправить<!--:--></span>
                             <i class="icon" ng-class="{'loading': vm.loading}" icon="'arrow-red'"></i>
                         </button>
-                        <div class="message">Заповніть, будь ласка, обов`язкові поля</div>
+                        <div class="message"><!--:uk-->Заповніть, будь ласка, обов`язкові поля<!--:--><!--:ru-->Заполните , пожалуйста , обязательные поля<!--:--></div>
                         <div class="message hidden" ng-class="{'hidden' : !vm.error && !vm.sent, 'error' : vm.error, 'success' : vm.sent}" ng-bind="vm.sent ? 'Ваше повідомлення надіслано! Дякуємо!' : 'Виникла помилка! Будь ласка, спробуйте ще.'"></div>
                     </form>
                 </div>
