@@ -12,7 +12,7 @@
 		];
 		query_posts( $args );
 		if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<h4><span>[:ua]Останні новини[:ru]Последние новости[:]</span></h4>
+		<h4><span><?php echo __('[:ua]Останні новини[:ru]Последние новости[:]'); ?></span></h4>
 		<div class="thumbnail">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 		</div>
