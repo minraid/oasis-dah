@@ -25,7 +25,7 @@
 			<div class="date"><?php echo get_the_date(); ?></div>
 			<div class="comments"><a href="<?php the_permalink(); ?>"><?php comments_number(); ?></a></div>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="link"><!--:ua-->Читати далі<!--:--><!--:ru-->Читать далее<!--:--></a>
+		<a href="<?php the_permalink(); ?>" class="link"><?php echo __('[:ua]Читати далі[:ru]Читать далее[:]'); ?></a>
 	<?php endwhile; 
 	endif;
 	wp_reset_query(); ?>

@@ -2,23 +2,23 @@
 	<div class="footer-box">
 		<div class="container">
 			<div class="products">
-				<h4><!--:uk-->Продукція<!--:--><!--:ru-->Продукция<!--:--></h4>
+				<h4><?php echo __('[:ua]Продукція[:ru]Продукция[:]'); ?></h4>
 				<?php wp_nav_menu(array('theme_location' => 'footer-products') ); ?>
 			</div>
 			<div class="menu">
-				<h4><!--:uk-->Меню<!--:--><!--:ru-->Меню<!--:--></h4>
+				<h4><?php echo __('[:ua]Меню[:ru]Меню[:]'); ?></h4>
 				<?php wp_nav_menu(array('theme_location' => 'footer-menu') ); ?>
 			</div>
 			<div class="address">
-				<h4><!--:uk-->ТзОВ «Оазис Дах»<!--:--><!--:ru-->ООО «Оазис Дах»<!--:--></h4>
+				<h4><?php echo __('[:ua]ТзОВ «Оазис Дах»[:ru]ООО «Оазис Дах»[:]'); ?></h4>
 				<p><?php the_field('address', 'options'); ?></p>
-				<p class="copyright"><!--:uk-->ТзОВ «Оазис Дах» © Всі права захищено<!--:--><!--:ru-->ООО «Оазис Дах» © Все права защищены<!--:--></p>
+				<p class="copyright"><?php echo __('[:ua]ТзОВ «Оазис Дах» © Всі права захищено[:ru]ООО «Оазис Дах» © Все права защищены[:]'); ?></p>
 			</div>
 		</div>
 		<div class="stripe"></div>
 	</div>
 	<div class="developed">
-		<div class="container"><!--:uk-->Розробка сайту: <!--:--><!--:ru-->Создание сайта: <!--:--><a href="https://flowww.com.ua" target="_blank">Flowww</a></div>
+		<div class="container"><?php echo __('[:ua]Розробка сайту: [:ru]Создание сайта: [:]'); ?><a href="https://flowww.com.ua" target="_blank">Flowww</a></div>
 	</div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>

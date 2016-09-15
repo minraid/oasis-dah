@@ -27,7 +27,7 @@
                                     <div class="comments"><a href="<?php the_permalink(); ?>#comments"><?php comments_number(); ?></a></div>
                                 </div>
                                 <div class="post-excerpt"><?php the_excerpt(); ?></div>
-                                <a href="<?php the_permalink(); ?>" class="link"><!--:uk-->Читати далі<!--:--><!--:ru-->Читать далее<!--:--></a>
+                                <a href="<?php the_permalink(); ?>" class="link"><?php echo __('[:ua]Читати далі[:ru]Читать далее[:]'); ?></a>
                             </div>
                         </div>
                     </div>

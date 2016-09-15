@@ -20,7 +20,7 @@
                                 <div class="description" ng-class="{'active':open}">
                                     <?php the_field('content', $cat); ?>
                                 </div>
-                                <a href="" class="more" ng-click="open=!open"><!--:uk-->Детальніше<!--:--><!--:ru-->Подробнее<!--:--></a>
+                                <a href="" class="more" ng-click="open=!open"><?php echo __('[:ua]Детальніше[:ru]Подробнее[:]'); ?></a>
                             </div>
                         </div>
                         <?php 
@@ -59,7 +59,7 @@
                                     <?php $text = get_field('content', $category); 
                                     echo acf_excerpt($text);
                                     ?>
-                                    <a href="<?= get_category_link($category->term_id); ?>" class="more"><!--:uk-->Детальніше<!--:--><!--:ru-->Подробнее<!--:--></a>
+                                    <a href="<?= get_category_link($category->term_id); ?>" class="more"><?php echo __('[:ua]Детальніше[:ru]Подробнее[:]'); ?></a>
                                 </div>
                                 <div class="products">
                                     <?php foreach ($posts as $post) { ?>
@@ -109,7 +109,7 @@
                                         <div class="description" ng-class="{'active':open}">
                                             <?php the_field('content', $cat); ?>
                                         </div>
-                                        <a href="" class="more arrow" ng-click="open=!open"><!--:uk-->Детальніше<!--:--><!--:ru-->Подробнее<!--:--></a>
+                                        <a href="" class="more arrow" ng-click="open=!open"><?php echo __('[:ua]Детальніше[:ru]Подробнее[:]'); ?></a>
                                     </div>
                                     <div class="products">
                                         <?php foreach ($posts as $post) { ?>
@@ -127,13 +127,13 @@
                                         if(have_rows('downloads', $cat)) :
                                         $downloads = get_field('downloads', $cat); ?>
                                         <div class="manufacturer-downloads">
-                                            <h2><!--:uk-->Файли для завантаження:<!--:--><!--:ru-->Файлы для загрузки:<!--:--></h2>
+                                            <h2><?php echo __('[:ua]Файли для завантаження:[:ru]Файлы для загрузки:[:]'); ?></h2>
                                             <?php foreach ($downloads as $row) { ?>
                                             <div class="file">
                                                 <i class="icon" icon="'file'"></i>
                                                 <div class="details">
                                                     <div class="title"><?= $row['title']; ?></div>
-                                                    <a href="<?= $row['file']; ?>" target="_blank"><!--:uk-->Завантажити<!--:--><!--:ru-->Скачать<!--:--></a>
+                                                    <a href="<?= $row['file']; ?>" target="_blank"><?php echo __('[:ua]Завантажити[:ru]Скачать[:]'); ?></a>
                                                 </div>
                                             </div>
                                             <?php } ?>

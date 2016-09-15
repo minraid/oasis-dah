@@ -12,14 +12,14 @@
                     <div class="link-wrap">
                         <a href="/dealer" class="link">
                             <i class="icon dealer" icon="'dealer'"></i>
-                            <span><!--:uk-->Дилерам<!--:--><!--:ru-->Диллерам<!--:--></span>
+                            <span><?php echo __('[:ua]Дилерам[:ru]Диллерам[:]'); ?></span>
                             <i class="icon arrow" icon="'arrow-red'"></i>
                         </a>
                     </div>
                     <div class="link-wrap">
                         <a href="/architect" class="link">
                             <i class="icon architect" icon="'architect'"></i>
-                            <span><!--:uk-->Архітекторам та будівельникам<!--:--><!--:ru-->Архитекторам и строителям<!--:--></span>
+                            <span><?php echo __('[:ua]Архітекторам та будівельникам[:ru]Архитекторам и строителям[:]'); ?></span>
                             <i class="icon arrow" icon="'arrow-red'"></i>
                         </a>
                     </div>

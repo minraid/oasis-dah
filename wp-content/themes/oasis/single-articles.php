@@ -6,9 +6,9 @@
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <div class="content">
                     <div class="breadcrumbs">
-                        <a href="/"><!--:uk-->Головна<!--:--><!--:ru-->Главная<!--:--></a>
+                        <a href="/"><?php echo __('[:ua]Головна[:ru]Главная[:]'); ?></a>
                         >
-                        <a href="/articles"><!--:uk-->Статті<!--:--><!--:ru-->Статьи<!--:--></a>
+                        <a href="/articles"><?php echo __('[:ua]Статті[:ru]Статьи[:]'); ?></a>
                         >
                         <?php the_title( ); ?>
                     </div>
@@ -31,7 +31,7 @@
                         <?php $prev_post = get_previous_post();
                         if (!empty( $prev_post )): ?>
                         <div class="next-wrap">
-                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="next-link"><!--:uk-->Наступна стаття<!--:--><!--:ru-->Следующая статья<!--:--></a>
+                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="next-link"><?php echo __('[:ua]Наступна стаття[:ru]Следующая статья[:]'); ?></a>
                         </div>
                     <?php endif; ?>
                     <div id="comments" class="comments" ng-controller="commentsCtrl as vm">
@@ -52,10 +52,10 @@
                             </div>
                         </div>
                         <form class="comment-form" name="comment" ng-submit="vm.send(comment)" novalidate>
-                            <h2><!--:uk-->Залишити відгук:<!--:--><!--:ru-->Оставить отзыв:<!--:--></h2>
+                            <h2><?php echo __('[:ua]Залишити відгук:[:ru]Оставить отзыв:[:]'); ?></h2>
                             <textarea placeholder="Напишіть Ваш відгук тут..." ng-model="vm.data.comment_content" required></textarea>
                             <div class="hint-box">
-                                <div class="hint"><!--:uk-->Заповніть Вашу інформацію нижче, або натисніть на іконку, щоб пройти верифікацію<!--:--><!--:ru-->Заполните Вашу информацию ниже, или нажмите на иконку, чтобы пройти верификацию<!--:--></div>
+                                <div class="hint"><?php echo __('[:ua]Заповніть Вашу інформацію нижче, або натисніть на іконку, щоб пройти верифікацію[:ru]Заполните Вашу информацию ниже, или нажмите на иконку, чтобы пройти верификацию[:]'); ?></div>
                                 <div class="social">
                                     <i class="icon" icon="'fb'"></i>
                                     <i class="icon" icon="'gp'"></i>
@@ -72,10 +72,10 @@
                                 </div>
                             </div>
                             <button type="submit" class="disabled" ng-class="{'disabled':comment.$invalid}">
-                                <span ng-if="!vm.loading"><!--:uk-->Відправити коментар<!--:--><!--:ru-->Отправить комментарий<!--:--></span>
+                                <span ng-if="!vm.loading"><?php echo __('[:ua]Відправити коментар[:ru]Отправить комментарий[:]'); ?></span>
                                 <i class="icon" ng-class="{'loading': vm.loading}" icon="'arrow-red'"></i>
                             </button>
-                            <div class="message"><!--:uk-->Заповніть, будь ласка, обов`язкові поля<!--:--><!--:ru-->Заполните, пожалуйста, обязательные поля<!--:--></div>
+                            <div class="message"><?php echo __('[:ua]Заповніть, будь ласка, обов`язкові поля[:ru]Заполните, пожалуйста, обязательные поля[:]'); ?></div>
                             <div class="message hidden" ng-if="!comment.$submitted" ng-class="{'hidden' : !vm.error && !vm.sent, 'error' : vm.error, 'success' : vm.sent}" ng-bind="vm.sent ? 'Ваше повідомлення надіслано! Дякуємо!' : 'Виникла помилка! Будь ласка, спробуйте ще.'"></div>
                         </form>
                     </div>
