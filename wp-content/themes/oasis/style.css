@@ -262,6 +262,18 @@ aside + .content {
   .breadcrumbs a {
     color: #303ec1; }
 
+.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto; }
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
 .back-link {
   color: #696960;
   font: 14px/1rem PTSansItalic, sans-serif;
@@ -1165,7 +1177,7 @@ header .menu-box {
       -o-transition: max-height 0.25s ease-in-out;
       transition: max-height 0.25s ease-in-out; }
       .catalog .category .cat-description .description.active {
-        max-height: 300px; }
+        max-height: 10000px; }
         .catalog .category .cat-description .description.active + .more:after {
           border-top: none;
           border-bottom: 8px solid #4f4f4d; }

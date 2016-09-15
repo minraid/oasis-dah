@@ -25,7 +25,7 @@
 				max-height: 100px;
 				@include transition(max-height, 0.25s, 'ease-in-out');
 				&.active {
-					max-height: 300px;
+					max-height: 10000px;
 					+ .more {
 						&:after {
 							border-top: none;
