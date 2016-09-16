@@ -6,9 +6,9 @@
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <div class="content">
                     <div class="breadcrumbs">
-                        <a href="/">Головна</a>
+                        <a href="/"><?php echo __('[:ua]Головна[:ru]Главная[:]'); ?></a>
                         >
-                        <a href="/news">Новини</a>
+                        <a href="/news"><?php echo __('[:ua]Новини[:ru]Новости[:]'); ?></a>
                         >
                         <?php the_title( ); ?>
                     </div>
@@ -33,7 +33,7 @@
                         if (!empty( $prev_post )): 
                             ?>
                         <div class="next-wrap">
-                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="next-link">Наступна новина</a>
+                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="next-link"><?php echo __('[:ua]Наступна новина[:ru]Следующая новость[:]'); ?></a>
                         </div>
                         <?php 
                         endif;
@@ -56,10 +56,12 @@
                                 </div>
                             </div>
                             <form class="comment-form" name="comment" ng-submit="vm.send(comment)" novalidate>
-                                <h2>Залишити відгук:</h2>
-                                <textarea placeholder="Напишіть Ваш відгук тут..." ng-model="vm.data.comment_content" required></textarea>
+                                <h2><?php echo __('[:ua]Залишити відгук:[:ru]Оставить отзыв:[:]'); ?></h2>
+                                <textarea placeholder="<?php echo __('[:ua]Напишіть Ваш відгук тут...[:ru]Напишите Ваш отзыв здесь...[:]'); ?>" ng-model="vm.data.comment_content" required></textarea>
                                 <div class="hint-box">
-                                    <div class="hint">Заповніть Вашу інформацію нижче, або натисніть на іконку, щоб пройти верифікацію</div>
+                                    <div class="hint">
+                                    <?php echo __('[:ua]Заповніть Вашу інформацію нижче, або натисніть на іконку, щоб пройти верифікацію[:ru]Заполните Вашу информацию ниже , или нажмите на иконку , чтобы пройти верификацию[:]'); ?>
+                                    </div>
                                     <div class="social">
                                         <i class="icon" icon="'fb'"></i>
                                         <i class="icon" icon="'gp'"></i>
@@ -71,15 +73,15 @@
                                         <i class="icon" icon="'profile'"></i>
                                     </div>
                                     <div class="author-inputs">
-                                        <input type="text" placeholder="Введіть Ваше ім’я" ng-model="vm.data.comment_author" required>
-                                        <input type="email" placeholder="Введіть Ваш Email" ng-model="vm.data.comment_author_email" required>
+                                        <input type="text" placeholder="<?php echo __('[:ua]Введіть Ваше ім’я[:ru]Введите Ваше имя[:]'); ?>" ng-model="vm.data.comment_author" required>
+                                        <input type="email" placeholder="<?php echo __('[:ua]Введіть Ваш Email[:ru]Введите Ваш Email[:]'); ?>" ng-model="vm.data.comment_author_email" required>
                                     </div>
                                 </div>
                                 <button type="submit" class="disabled" ng-class="{'disabled':comment.$invalid}">
-                                    <span ng-if="!vm.loading">Відправити коментар</span>
+                                    <span ng-if="!vm.loading"><?php echo __('[:ua]Відправити коментар[:ru]Отправить комментарий[:]'); ?></span>
                                     <i class="icon" ng-class="{'loading': vm.loading}" icon="'arrow-red'"></i>
                                 </button>
-                                <div class="message">Заповніть, будь ласка, обов`язкові поля</div>
+                                <div class="message"><?php echo __('[:ua]Заповніть, будь ласка, обов`язкові поля[:ru]Заполните , пожалуйста , обязательные поля[:]'); ?></div>
                                 <div class="message hidden" ng-if="!comment.$submitted" ng-class="{'hidden' : !vm.error && !vm.sent, 'error' : vm.error, 'success' : vm.sent}" ng-bind="vm.sent ? 'Ваше повідомлення надіслано! Дякуємо!' : 'Виникла помилка! Будь ласка, спробуйте ще.'"></div>
                             </form>
                         </div>

@@ -46,11 +46,11 @@
                                     <div class="info">
                                         <a href="<?= get_category_link($category->term_id); ?>" class="name"><?= $category->name; ?></a>
                                         <div class="country">
-                                            Країна-виробник: 
+                                            <?php echo __('[:ua]Країна-виробник: [:ru]Страна-производитель: [:]'); ?>
                                             <strong><?php the_field('country', $category); ?></strong>
                                         </div>
                                         <div class="product-length">
-                                            Всього позицій:
+                                            <?php echo __('[:ua]Всього позицій: [:ru]Всего позиций: [:]'); ?>
                                             <a href="<?= get_category_link($category->term_id); ?>"><?= count($posts); ?></a>
                                         </div>
                                     </div>
@@ -96,11 +96,11 @@
                                         <div class="info">
                                             <span class="name"><?= $cat->name ?></span>
                                             <div class="country">
-                                                Країна-виробник: 
+                                                <?php echo __('[:ua]Країна-виробник: [:ru]Страна-производитель: [:]'); ?>
                                                 <strong><?php the_field('country', $cat); ?></strong>
                                             </div>
                                             <div class="product-length">
-                                                Всього позицій:
+                                                <?php echo __('[:ua]Всього позицій: [:ru]Всего позиций: [:]'); ?>
                                                 <span><?= count($posts); ?></span>
                                             </div>
                                         </div>

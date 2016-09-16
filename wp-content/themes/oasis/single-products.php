@@ -7,7 +7,7 @@
                 <?php if(have_posts()) { 
                     the_post();
                     $categories = get_the_category($post->ID);
-                    $breadcrumbs = '<a href="/">[:uk]Головна[:ru]Главная[:]</a> > ';
+                    $breadcrumbs = '<a href="/">'+__('[:ua]Головна[:ru]Главная[:]')+'</a> > ';
                     if(count($categories)>0) {
                         foreach ($categories as $cat) {
                             if($cat->category_parent == 0) {
@@ -61,9 +61,15 @@
                             <div class="product-details">
                                 <h1 ng-bind="'<?= $title; ?> '+(color.title || '<?= $carousel[0]['title']; ?>')"></h1>
                                 <div class="tabs" ng-init="show='description'">
-                                    <div class="tab" ng-class="{'active' : show == 'description'}" ng-click="show='description'">[:uk]Опис[:ru]Описание[:]</div>
-                                    <div class="tab" ng-class="{'active' : show == 'examples'}" ng-click="show='examples'">Приклади застосування</div>
-                                    <div class="tab" ng-class="{'active' : show == 'accessories'}" ng-click="show='accessories'">Аксесуари</div>
+                                    <div class="tab" ng-class="{'active' : show == 'description'}" ng-click="show='description'">
+                                    <?php echo __('[:ua]Опис[:ru]Описание[:]'); ?>
+                                    </div>
+                                    <div class="tab" ng-class="{'active' : show == 'examples'}" ng-click="show='examples'">
+                                    <?php echo __('[:ua]Приклади застосування[:ru]Gримеры применения[:]'); ?>
+                                    </div>
+                                    <div class="tab" ng-class="{'active' : show == 'accessories'}" ng-click="show='accessories'">
+                                    <?php echo __('[:ua]Аксесуари[:ru]Аксессуары[:]'); ?>
+                                    </div>
                                 </div>
                                 <div class="product-specifications">
                                     <?php 
@@ -112,7 +118,9 @@
 </div>
 </div>
 </div>
-<a href="<?= $backLink; ?>" class="back-link">Повернутися назад</a>
+<a href="<?= $backLink; ?>" class="back-link">
+<?php echo __('[:ua]Повернутися назад[:ru]Вернуться назад[:]'); ?>
+</a>
 </div>
 </div>
 <?php get_sidebar( 'logos' ); ?>
