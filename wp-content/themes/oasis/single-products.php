@@ -65,7 +65,7 @@
                                     <?php echo __('[:ua]Опис[:ru]Описание[:]'); ?>
                                     </div>
                                     <div class="tab" ng-class="{'active' : show == 'examples'}" ng-click="show='examples'">
-                                    <?php echo __('[:ua]Приклади застосування[:ru]Gримеры применения[:]'); ?>
+                                    <?php echo __('[:ua]Приклади застосування[:ru]Примеры применения[:]'); ?>
                                     </div>
                                     <div class="tab" ng-class="{'active' : show == 'accessories'}" ng-click="show='accessories'">
                                     <?php echo __('[:ua]Аксесуари[:ru]Аксессуары[:]'); ?>
