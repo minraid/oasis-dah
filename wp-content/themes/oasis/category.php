@@ -66,7 +66,7 @@
                                         <a href="<?= $post->guid; ?>" class="product-wrap">
                                             <div class="product">
                                                 <div class="img">
-                                                    <img src="<?php bloginfo( 'template_url' ); ?>/img/products/1.jpg" alt="">
+                                                    <?= get_the_post_thumbnail($post->ID); ?>
                                                 </div>
                                                 <div class="name"><?= $post->post_title; ?></div>
                                             </div>
@@ -116,7 +116,7 @@
                                             <a href="<?= $post->guid; ?>" class="product-wrap">
                                                 <div class="product">
                                                     <div class="img">
-                                                        <img src="<?php bloginfo( 'template_url' ); ?>/img/products/1.jpg" alt="">
+                                                        <?= get_the_post_thumbnail($post->ID); ?>
                                                     </div>
                                                     <div class="name"><?= $post->post_title; ?></div>
                                                 </div>
