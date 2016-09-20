@@ -7,7 +7,7 @@
                 <?php if(have_posts()) { 
                     the_post();
                     $gallery = get_field('gallery', $post->ID);
-                    $breadcrumbs = '<a href="/">' . __('[:uk]Головна[:ru]Главная[:]') . '</a> > <a href="/gallery">' . __('[:uk]Галерея[:ru]Галерея[:]') . '</a> > '.$post->post_title; ?>
+                    $breadcrumbs = '<a href="/">' . __('[:ua]Головна[:ru]Главная[:]') . '</a> > <a href="/gallery">' . __('[:ua]Галерея[:ru]Галерея[:]') . '</a> > '.$post->post_title; ?>
                     <div class="breadcrumbs">
                         <?= $breadcrumbs; ?>
                     </div>
