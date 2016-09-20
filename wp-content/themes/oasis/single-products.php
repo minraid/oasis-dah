@@ -7,7 +7,7 @@
                 <?php if(have_posts()) { 
                     the_post();
                     $categories = get_the_category($post->ID);
-                    $breadcrumbs = '<a href="/">'+ echo __('[:ua]Головна[:ru]Главная[:]') + '</a> > ';
+                    $breadcrumbs = '<a href="/">'+ __('[:ua]Головна[:ru]Главная[:]') + '</a> > ';
                     if(count($categories)>0) {
                         foreach ($categories as $cat) {
                             if($cat->category_parent == 0) {
