@@ -88,60 +88,6 @@
                                 ];
                                 $posts = get_posts($args);
                                 ?>
-                                <div class="manufacturer">
-                                    <div class="manufacturer-description">
-                                        <div class="logo">
-                                            <img src="<?php the_field('thumbnail', $cat); ?>" alt="">
-                                        </div>
-                                        <div class="info">
-                                            <span class="name"><?= $cat->name ?></span>
-                                            <div class="country">
-                                                <?php echo __('[:ua]Країна-виробник: [:ru]Страна-производитель: [:]'); ?>
-                                                <strong><?php the_field('country', $cat); ?></strong>
-                                            </div>
-                                            <div class="product-length">
-                                                <?php echo __('[:ua]Всього позицій: [:ru]Всего позиций: [:]'); ?>
-                                                <span><?= count($posts); ?></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="manufacturer-text">
-                                        <div class="description" ng-class="{'active':open}">
-                                            <?php the_field('content', $cat); ?>
-                                        </div>
-                                        <a href="" class="more arrow" ng-click="open=!open"><?php echo __('[:ua]Детальніше[:ru]Подробнее[:]'); ?></a>
-                                    </div>
-                                    <div class="products">
-                                        <?php foreach ($posts as $post) { ?>
-                                            <a href="<?= $post->guid; ?>" class="product-wrap">
-                                                <div class="product">
-                                                    <div class="img">
-                                                        <?= get_the_post_thumbnail($post->ID); ?>
-                                                    </div>
-                                                    <div class="name"><?= $post->post_title; ?></div>
-                                                </div>
-                                            </a>
-                                            <?php } ?>
-                                        </div>
-                                        <?php 
-                                        if(have_rows('downloads', $cat)) :
-                                        $downloads = get_field('downloads', $cat); ?>
-                                        <div class="manufacturer-downloads">
-                                            <h2><?php echo __('[:ua]Файли для завантаження:[:ru]Файлы для загрузки:[:]'); ?></h2>
-                                            <?php foreach ($downloads as $row) { ?>
-                                            <div class="file">
-                                                <i class="icon" icon="'file'"></i>
-                                                <div class="details">
-                                                    <div class="title"><?= $row['title']; ?></div>
-                                                    <a href="<?= $row['file']; ?>" target="_blank"><?php echo __('[:ua]Завантажити[:ru]Скачать[:]'); ?></a>
-                                                </div>
-                                            </div>
-                                            <?php } ?>
-                                        </div>
-                                        <?php endif; ?>
-                                    </div>
-                                <?php }; ?>
-                            </div>
                         </div>
                     </div>
                 </div>
