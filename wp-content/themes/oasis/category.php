@@ -140,7 +140,6 @@
                                         </div>
                                         <?php endif; ?>
                                     </div>
-                                </div>
                                 <?php }; ?>
                             </div>
                         </div>
