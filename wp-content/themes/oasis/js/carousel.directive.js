@@ -21,7 +21,7 @@ function carousel($timeout){
         scope.move = function(back) {
             if(back && i>0) {
                 i--;
-                transform = 'translateX(' + i*transformWidth + '%)';
+                transform = 'translateX(-' + i*transformWidth + '%)';
                 list.css('transform', transform);
             } else if(!back && i < pages-1) {
                 i++;
