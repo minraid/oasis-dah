@@ -88,6 +88,8 @@
                                 ];
                                 $posts = get_posts($args);
                                 ?>
+                                <?php }; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
