@@ -146,7 +146,8 @@
                         </div>
                     </div>
                 </div>
-                <?php get_sidebar( 'logos' ); ?>
             </div>
-        </section>
-        <?php get_footer( ); ?>
+            <?php get_sidebar( 'logos' ); ?>
+        </div>
+    </section>
+    <?php get_footer( ); ?>
