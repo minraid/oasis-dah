@@ -41,6 +41,8 @@
 		scrollTo(y, step);
 	}
 	function scrollTo(y, step) {
+		console.log(y);
+		console.log(step);
 		if(y<=0) {
 			return;
 		}
