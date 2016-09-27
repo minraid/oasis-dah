@@ -38,7 +38,7 @@
 	document.addEventListener("DOMContentLoaded", function(){	
 		if(document.body.clientWidth < 768) {
 			var y = document.querySelector('.content').offsetTop - 15;
-			var step = y/60;
+			var step = y/30;
 			scrollTo(0, step, y);
 		}
 		function scrollTo(to, step, y) {
