@@ -35,22 +35,23 @@
 <script src="<?php bloginfo( 'template_url' ); ?>/js/comments.controller.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaE5gtN_UQMu8hCgXZyUMuBemyNj2cQDk&callback=initMap"></script>
 <script>
-	if(document.body.clientWidth < 768) {
-		var y = document.querySelector('.content').offsetTop - 15;
-		var step = y/20;
-		scrollTo(y, step);
-	}
-	function scrollTo(y, step) {
-		if(y<=0) {
-			return;
-		}
-		setTimeout(function(){
-			y = y - step;
-			console.log(y);
-			window.scrollTo(0, 100);
+	document.addEventListener("DOMContentLoaded", function(){	
+		if(document.body.clientWidth < 768) {
+			var y = document.querySelector('.content').offsetTop - 15;
+			var step = y/20;
 			scrollTo(y, step);
-		}, 50);
-	}
+		}
+		function scrollTo(y, step) {
+			if(y<=0) {
+				return;
+			}
+			setTimeout(function(){
+				y = y - step;
+				window.scrollTo(0, 100);
+				scrollTo(y, step);
+			}, 50);
+		}
+	})
 </script>
 </body>
 </html>
