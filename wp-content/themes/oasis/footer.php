@@ -39,16 +39,16 @@
 		if(document.body.clientWidth < 768) {
 			var y = document.querySelector('.content').offsetTop - 15;
 			var step = y/20;
-			scrollTo(y, step);
+			scrollTo(0, step, y);
 		}
-		function scrollTo(y, step) {
-			if(y<=0) {
+		function scrollTo(to, step, y) {
+			if(to < y) {
 				return;
 			}
 			setTimeout(function(){
-				y = y - step;
+				to += step;
 				window.scrollTo(0, y);
-				scrollTo(y, step);
+				scrollTo(to, y);
 			}, 50);
 		}
 	})
