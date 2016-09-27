@@ -37,7 +37,7 @@
 <script>
 	if(document.body.clientWidth < 768) {
 		var y = document.querySelector('.content').offsetTop - 15;
-		var step = y/100;
+		var step = y/20;
 		scrollTo(y, step);
 	}
 	function scrollTo(y, step) {
@@ -46,10 +46,11 @@
 		if(y<=0) {
 			return;
 		}
+		y = y - step;
 		setTimeout(function(){
-			window.scrollTo(0, step);
-			scrollTo(y - step, step);
-		}, 10);
+			window.scrollTo(0, y);
+			scrollTo(y, step);
+		}, 50);
 	}
 </script>
 </body>
