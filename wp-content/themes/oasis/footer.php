@@ -44,13 +44,13 @@
 		if(y<=0) {
 			return;
 		}
-		y = y - step;
-		console.log(y);
-		scrollTo(y, step);
-		// setTimeout(function(){
+		setTimeout(function(){
+			y = y - step;
+			console.log(y);
+			scrollTo(y, step);
 		// 	window.scrollTo(0, y);
 		// 	scrollTo(y, step);
-		// }, 50);
+		}, 50);
 	}
 </script>
 </body>
