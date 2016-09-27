@@ -46,7 +46,8 @@
 		}
 		setTimeout(function(){
 			y = y - step;
-			window.scrollTo(y, 0);
+			console.log(y);
+			window.scrollTo(0, 100);
 			scrollTo(y, step);
 		}, 50);
 	}
