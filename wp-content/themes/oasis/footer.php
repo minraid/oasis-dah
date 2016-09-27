@@ -36,22 +36,20 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaE5gtN_UQMu8hCgXZyUMuBemyNj2cQDk&callback=initMap"></script>
 <script>
 	document.addEventListener("DOMContentLoaded", function(){	
-		var start = Date.now();
 		if(document.body.clientWidth < 768) {
 			var y = document.querySelector('.content').offsetTop - 15;
-			var step = y/20;
+			var step = y/60;
 			scrollTo(0, step, y);
 		}
 		function scrollTo(to, step, y) {
 			if(to >= y) {
-				console.log(Date.now() - start);
 				return;
 			}
 			setTimeout(function(){
 				to += step;
 				window.scrollTo(0, to);
 				scrollTo(to, step, y);
-			}, 50);
+			}, 15);
 		}
 	})
 </script>
