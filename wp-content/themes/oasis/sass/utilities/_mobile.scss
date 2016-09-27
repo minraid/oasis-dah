@@ -181,6 +181,13 @@
 		}
 		.product-details {
 			width: 100%;
+			.tabs {
+				display: table;
+				.tab {
+					float: none;
+					display: table-cell;
+				}
+			}
 		}
 	}
 	.album-gallery .photo {

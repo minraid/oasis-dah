@@ -34,7 +34,7 @@
 		<div class="menu-box">
 			<div class="container">
 				<div class="menu">
-					<div class="menuBtn" ng-click="open=!open" ng-class="{'open':open}">
+					<div class="menuBtn" ng-click="openMenu=!openMenu" ng-class="{'open':openMenu}">
 						<span></span>
 						<span></span>
 						<span></span>
