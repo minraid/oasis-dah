@@ -198,10 +198,10 @@ body {
         float: none;
         display: table-cell;
         padding: 0 5px; }
-  .product .product-main .product-specifications .table .labels, .product .product-main .product-specifications .table .values {
-    width: 50%; }
-  .product .product-main .product-specifications .table .td {
-    padding: 0 5px; }
+    .product .product-main .product-details .product-specifications .table .labels, .product .product-main .product-details .product-specifications .table .values {
+      width: 50%; }
+    .product .product-main .product-details .product-specifications .table .td {
+      padding: 0 5px; }
   .album-gallery .photo {
     width: 100%; }
   .popup .popup-wrap .popup-box .popup-body {
@@ -2075,10 +2075,10 @@ footer .developed {
         float: none;
         display: table-cell;
         padding: 0 5px; }
-  .product .product-main .product-specifications .table .labels, .product .product-main .product-specifications .table .values {
-    width: 50%; }
-  .product .product-main .product-specifications .table .td {
-    padding: 0 5px; }
+    .product .product-main .product-details .product-specifications .table .labels, .product .product-main .product-details .product-specifications .table .values {
+      width: 50%; }
+    .product .product-main .product-details .product-specifications .table .td {
+      padding: 0 5px; }
   .album-gallery .photo {
     width: 100%; }
   .popup .popup-wrap .popup-box .popup-body {
