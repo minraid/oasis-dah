@@ -47,8 +47,8 @@
 			}
 			setTimeout(function(){
 				to += step;
-				window.scrollTo(0, y);
-				scrollTo(to, y);
+				window.scrollTo(0, to);
+				scrollTo(to, step, y);
 			}, 50);
 		}
 	})
