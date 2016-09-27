@@ -41,16 +41,16 @@
 		scrollTo(y, step);
 	}
 	function scrollTo(y, step) {
-		console.log(y);
-		console.log(step);
 		if(y<=0) {
 			return;
 		}
 		y = y - step;
-		setTimeout(function(){
-			window.scrollTo(0, y);
-			scrollTo(y, step);
-		}, 50);
+		console.log(y);
+		scrollTo(y, step);
+		// setTimeout(function(){
+		// 	window.scrollTo(0, y);
+		// 	scrollTo(y, step);
+		// }, 50);
 	}
 </script>
 </body>
