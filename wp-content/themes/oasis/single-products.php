@@ -16,18 +16,13 @@
                         }
                         foreach ($categories as $cat) {
                             if($cat->category_parent != 0) {
-                                $title = $cat->name.' '.$post->post_title;
                                 $breadcrumbs .= '<a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a> > ';
                                 $backLink = get_category_link($cat->term_id);
                             }
                         }
-                        if(!$title) {
-                            $title = $categories[0]->name;
-                        }
                         $breadcrumbs .= $post->post_title;
-                    } else {
-                        $title = $post->post_title;
                     }
+                    $title = $post->post_title;
                     ?>
                     <div class="breadcrumbs">
                         <?= $breadcrumbs; ?>
