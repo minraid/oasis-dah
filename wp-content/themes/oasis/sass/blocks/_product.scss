@@ -129,6 +129,8 @@
 						color: #4f4f4d;
 						padding: 0 15px 0 10px;
 						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
 						&:nth-child(2n+1) {
 							background-color: #f9f9f9;
 						}

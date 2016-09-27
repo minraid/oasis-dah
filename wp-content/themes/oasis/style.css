@@ -196,7 +196,12 @@ body {
       display: table; }
       .product .product-main .product-details .tabs .tab {
         float: none;
-        display: table-cell; }
+        display: table-cell;
+        padding: 0 5px; }
+  .product .product-main .product-specifications .table .labels, .product .product-main .product-specifications .table .values {
+    width: 50%; }
+  .product .product-main .product-specifications .table .td {
+    padding: 0 5px; }
   .album-gallery .photo {
     width: 100%; }
   .popup .popup-wrap .popup-box .popup-body {
@@ -1519,7 +1524,9 @@ header .menu-box {
     line-height: 24px;
     color: #4f4f4d;
     padding: 0 15px 0 10px;
-    white-space: nowrap; }
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
     .product .product-main .product-details .product-specifications .table .td:nth-child(2n+1) {
       background-color: #f9f9f9; }
 
@@ -2066,7 +2073,12 @@ footer .developed {
       display: table; }
       .product .product-main .product-details .tabs .tab {
         float: none;
-        display: table-cell; }
+        display: table-cell;
+        padding: 0 5px; }
+  .product .product-main .product-specifications .table .labels, .product .product-main .product-specifications .table .values {
+    width: 50%; }
+  .product .product-main .product-specifications .table .td {
+    padding: 0 5px; }
   .album-gallery .photo {
     width: 100%; }
   .popup .popup-wrap .popup-box .popup-body {
