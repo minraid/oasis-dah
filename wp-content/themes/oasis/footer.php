@@ -42,7 +42,7 @@
 			scrollTo(0, step, y);
 		}
 		function scrollTo(to, step, y) {
-			if(to < y) {
+			if(to >= y) {
 				return;
 			}
 			setTimeout(function(){
