@@ -33,25 +33,7 @@
 <script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/contact.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/comments.controller.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/mobileScroll.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaE5gtN_UQMu8hCgXZyUMuBemyNj2cQDk&callback=initMap"></script>
-<script>
-	document.addEventListener("DOMContentLoaded", function(){	
-		if(document.body.clientWidth < 768) {
-			var y = document.querySelector('.content').offsetTop - 15;
-			var step = y/30;
-			scrollTo(0, step, y);
-		}
-		function scrollTo(to, step, y) {
-			if(to >= y) {
-				return;
-			}
-			setTimeout(function(){
-				to += step;
-				window.scrollTo(0, to);
-				scrollTo(to, step, y);
-			}, 15);
-		}
-	})
-</script>
 </body>
 </html>
