@@ -51,7 +51,18 @@ function acf_excerpt($text) {
 
 function register_products() {
 	$args = array(
-		'label'  => 'Products',
+		'label' => 'Products',
+		'description' => '',
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'capability_type' => 'post',
+		'map_meta_cap' => true,
+		'hierarchical' => false,
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-cart',
+		'rewrite' => array('slug' => 'products', 'with_front' => true),
+		'query_var' => true,
 		'labels' => array(
 			'name'               => 'Товари',
 			'singular_name'      => 'Товар',
@@ -66,18 +77,8 @@ function register_products() {
 			'parent_item_colon'  => '',
 			'menu_name'          => 'Товари',
 			),
-		'description'         => '',
-		'public'              => false,
-		'publicly_queryable'  => true,
-		'exclude_from_search' => false,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'menu_position'       => 5,
-		'menu_icon'           => 'dashicons-cart', 
-		'supports'            => array('title','editor','thumbnail'),
 		'taxonomies'          => array('category'),
-		'rewrites'            => array('slug'=>'products')
-		);
+	);
 	register_post_type('products', $args );
 }
 
