@@ -62,6 +62,7 @@ function register_products() {
 		'menu_position' => 5,
 		'menu_icon' => 'dashicons-cart',
 		'rewrite' => array('slug' => 'products', 'with_front' => true),
+		'supports'  => array('title','editor','thumbnail'),
 		'query_var' => true,
 		'labels' => array(
 			'name'               => 'Товари',
