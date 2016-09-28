@@ -94,7 +94,7 @@ function register_gallery() {
 		'hierarchical' => false,
 		'menu_position' => 5,
 		'menu_icon' => 'dashicons-format-gallery',
-		'supports'            => array('title','thumbnail'),
+		'supports' => array('title','thumbnail'),
 		'rewrite' => array('slug' => 'gallery', 'with_front' => true),
 		'query_var' => true,
 		'labels' => array(
@@ -127,7 +127,7 @@ function register_articles() {
 		'hierarchical' => false,
 		'menu_position' => 5,
 		'menu_icon' => 'dashicons-edit', 
-		'supports'  => array('title','editor','thumbnail')
+		'supports'  => array('title','editor','thumbnail'),
 		'rewrite' => array('slug' => 'gallery', 'with_front' => true),
 		'query_var' => true,
 		'labels' => array(
