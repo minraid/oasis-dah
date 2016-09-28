@@ -23,7 +23,7 @@
                             </div>
                             <div class="post-content">
                                 <div class="post-details">
-                                    <div class="date"><?php echo get_the_date( ); ?></div>
+                                    <div class="date"><?php echo date_i18n('d F Y', strtotime( get_the_date() )); ?></div>
                                     <div class="comments"><a href="<?php the_permalink(); ?>#comments"><?php comments_number(); ?></a></div>
                                 </div>
                                 <div class="post-excerpt"><?php the_excerpt(); ?></div>
