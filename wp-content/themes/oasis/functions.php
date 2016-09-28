@@ -85,30 +85,32 @@ function register_products() {
 function register_gallery() {
 	$args = array(
 		'label'  => 'Gallery',
-		'labels' => array(
-			'name'               => 'Галерея',
-			'singular_name'      => 'Альбом',
-			'add_new'            => 'Додати альбом',
-			'add_new_item'       => 'Додати новий альбом',
-			'edit_item'          => 'Редагувати опис альбому',
-			'new_item'           => 'Новий альбом',
-			'view_item'          => 'Переглянути опис альбому',
-			'search_items'       => 'Знайти альбом',
-			'not_found'          => 'Товар не знайдено',
-			'not_found_in_trash' => 'В смітнику альбом не знайдено',
-			'parent_item_colon'  => '',
-			'menu_name'          => 'Галерея',
-			),
-		'description'         => '',
-		'public'              => false,
-		'publicly_queryable'  => true,
-		'exclude_from_search' => false,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'menu_position'       => 5,
-		'menu_icon'           => 'dashicons-format-gallery', 
+		'description' => '',
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'capability_type' => 'post',
+		'map_meta_cap' => true,
+		'hierarchical' => false,
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-format-gallery',
 		'supports'            => array('title','thumbnail'),
-		'rewrites'            => array('slug'=>'gallery')
+		'rewrite' => array('slug' => 'gallery', 'with_front' => true),
+		'query_var' => true,
+		'labels' => array(
+			'name'               => 'Товари',
+			'singular_name'      => 'Товар',
+			'add_new'            => 'Додати новий',
+			'add_new_item'       => 'Додати новий товар',
+			'edit_item'          => 'Редагувати опис товару',
+			'new_item'           => 'Новий товар',
+			'view_item'          => 'Переглянути опис товару',
+			'search_items'       => 'Знайти товар',
+			'not_found'          => 'Товар не знайдено',
+			'not_found_in_trash' => 'В смітнику товар не знайдено',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Товари',
+			), 
 		);
 	register_post_type('gallery', $args );
 }
@@ -116,6 +118,18 @@ function register_gallery() {
 function register_articles() {
 	$args = array(
 		'label'  => 'Articles',
+		'description' => '',
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'capability_type' => 'post',
+		'map_meta_cap' => true,
+		'hierarchical' => false,
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-edit', 
+		'supports'  => array('title','editor','thumbnail')
+		'rewrite' => array('slug' => 'gallery', 'with_front' => true),
+		'query_var' => true,
 		'labels' => array(
 			'name'               => 'Статті',
 			'singular_name'      => 'Стаття',
@@ -130,15 +144,6 @@ function register_articles() {
 			'parent_item_colon'  => '',
 			'menu_name'          => 'Статті',
 			),
-		'description'         => '',
-		'public'              => false,
-		'publicly_queryable'  => true,
-		'exclude_from_search' => false,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'menu_position'       => 6,
-		'menu_icon'           => 'dashicons-edit', 
-		'supports'            => array('title','editor','thumbnail')
 		);
 	register_post_type('articles', $args );
 }
