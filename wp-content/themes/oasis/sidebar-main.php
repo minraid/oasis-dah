@@ -1,18 +1,7 @@
-<aside>
+<aside class="main">
 	<div class="menu">
 		<h4><span>Меню</span></h4>
 		<?php wp_nav_menu(array('theme_location' => 'sidebar-menu') ); ?>
-	</div>
-
-	<div class="mobile-dropdown">
-		<?php 
-			wp_nav_menu(array(
-				'theme_location' => 'sidebar-menu',
-				'walker'         => new Walker_Nav_Menu_Dropdown(),
-			  	'items_wrap'     => '<select>%3$s</select>'
-			  	)
-			);
-		?>
 	</div>
 
 	<div class="last-news">

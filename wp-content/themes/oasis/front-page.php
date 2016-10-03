@@ -6,7 +6,7 @@
         <?php } ?>
         <div class="container">
             <div class="content-box">
-                <?php get_sidebar( ); ?>
+                <?php get_sidebar( 'main' ); ?>
                 <div class="content">
                     <?php 
                     if(have_posts()) { 

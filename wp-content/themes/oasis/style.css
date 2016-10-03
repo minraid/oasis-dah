@@ -148,6 +148,8 @@ body {
         padding: 10px 5px; }
         aside > .menu ul.menu > li a {
           font-size: 18px; }
+    aside .mobile-dropdown {
+      display: block; }
     aside + .content {
       width: 100%;
       padding: 0; }
@@ -1867,6 +1869,8 @@ aside {
         aside > .menu ul.menu > li ul.sub-menu li.current-menu-item a, aside > .menu ul.menu > li ul.sub-menu li.current-menu-parent a {
           color: #191917;
           border-color: #4f4f4d; }
+  aside .mobile-dropdown {
+    display: none; }
   aside .last-news {
     margin-top: 25px;
     padding: 40px 30px;
@@ -2061,6 +2065,8 @@ footer .developed {
         padding: 10px 5px; }
         aside > .menu ul.menu > li a {
           font-size: 18px; }
+    aside .mobile-dropdown {
+      display: block; }
     aside + .content {
       width: 100%;
       padding: 0; }
