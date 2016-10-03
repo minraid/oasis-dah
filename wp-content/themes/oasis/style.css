@@ -137,7 +137,6 @@ body {
     padding: 0;
     margin-bottom: 20px; }
     aside > .menu {
-      display: none;
       padding: 15px 20px; }
       aside > .menu h4 {
         font-size: 20px;
@@ -149,8 +148,6 @@ body {
         padding: 10px 5px; }
         aside > .menu ul.menu > li a {
           font-size: 18px; }
-    aside .mobile-dropdown {
-      display: block; }
     aside + .content {
       width: 100%;
       padding: 0; }
@@ -1870,16 +1867,6 @@ aside {
         aside > .menu ul.menu > li ul.sub-menu li.current-menu-item a, aside > .menu ul.menu > li ul.sub-menu li.current-menu-parent a {
           color: #191917;
           border-color: #4f4f4d; }
-  aside .mobile-dropdown {
-    display: none; }
-    aside .mobile-dropdown select {
-      width: 100%;
-      padding: 5px 10px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-      font: 14px/1rem PTSansBold, sans-serif;
-      color: #dc1f26;
-      margin-bottom: 20px; }
   aside .last-news {
     margin-top: 25px;
     padding: 40px 30px;
@@ -2063,7 +2050,6 @@ footer .developed {
     padding: 0;
     margin-bottom: 20px; }
     aside > .menu {
-      display: none;
       padding: 15px 20px; }
       aside > .menu h4 {
         font-size: 20px;
@@ -2075,8 +2061,6 @@ footer .developed {
         padding: 10px 5px; }
         aside > .menu ul.menu > li a {
           font-size: 18px; }
-    aside .mobile-dropdown {
-      display: block; }
     aside + .content {
       width: 100%;
       padding: 0; }
