@@ -161,7 +161,7 @@ function oasis_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'oasis_excerpt_more' );
 
-class Walker_Nav_Menu_Dropdown extends Walker_Nav_Menu{
+class Walker_Nav_Menu_Dropdown extends Walker_Nav_Menu {
 
     // don't output children opening tag (`<ul>`)
     public function start_lvl(&$output, $depth){}
