@@ -137,6 +137,7 @@ body {
     padding: 0;
     margin-bottom: 20px; }
     aside > .menu {
+      display: none;
       padding: 15px 20px; }
       aside > .menu h4 {
         font-size: 20px;
@@ -1871,6 +1872,14 @@ aside {
           border-color: #4f4f4d; }
   aside .mobile-dropdown {
     display: none; }
+    aside .mobile-dropdown select {
+      width: 100%;
+      padding: 5px 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+      font: 14px/1rem PTSansBold, sans-serif;
+      color: #dc1f26;
+      margin-bottom: 20px; }
   aside .last-news {
     margin-top: 25px;
     padding: 40px 30px;
@@ -2054,6 +2063,7 @@ footer .developed {
     padding: 0;
     margin-bottom: 20px; }
     aside > .menu {
+      display: none;
       padding: 15px 20px; }
       aside > .menu h4 {
         font-size: 20px;
