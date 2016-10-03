@@ -71,16 +71,10 @@
                                     if(have_rows('product_properties')) :
                                         $table = get_field('product_properties'); ?>
                                     <div class="table">
-                                        <div class="labels">
-                                            <?php foreach ($table as $row) {
-                                                echo('<div class="td">'.$row['property'].'</div>');
-                                            } ?>
-                                        </div>
-                                        <div class="values">
-                                            <?php foreach ($table as $row) {
-                                                echo('<div class="td">'.$row['value'].'</div>');
-                                            } ?>
-                                        </div>
+                                        <?php foreach ($table as $row) {
+                                            echo('<div class="tr"><div class="td">'.$row['property'].'</div>');
+                                            echo('<div class="td">'.$row['value'].'</div></div>');
+                                        } ?>
                                     </div>
                                 <?php endif; ?>
                             </div>

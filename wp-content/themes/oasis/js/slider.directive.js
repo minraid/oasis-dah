@@ -19,7 +19,7 @@ function slider($timeout){
         var list = element.find('ul'),
             listWidth = scope.banners.length*100,
             transformWidth = 100 / listWidth * 100,
-            pages = Math.ceil(100/transformWidth);
+            pages = Math.ceil(listWidth/100);
             i = 0;
             scope.i = 0;
         
@@ -31,7 +31,7 @@ function slider($timeout){
                     scope.onChange = false;
                 }, 250)
                 i--;
-                transform = 'translateX(' + i*transformWidth + '%)';
+                transform = 'translateX(-' + i*transformWidth + '%)';
                 list.css('transform', transform);
             } else if(!back && i < pages-1) {
                 scope.onChange = true;

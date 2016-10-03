@@ -107,23 +107,16 @@
 			}
 			.product-specifications {
 				.table {
-					@include clearfix
-					.labels {
-						width: 40%;
-						float: left;
-					}
-					.values {
-						float: left;
-						width: 60%;
-						.td {
-							font: $PTSansbold;
-							font-size: 16px;
-							line-height: 24px;
-							color: #191917;
-							padding: 0 10px 0 15px;
+					display: table;
+					width: 100%;
+					.tr {
+						display: table-row;
+						&:nth-child(2n+1) {
+							background-color: #f9f9f9;
 						}
 					}
 					.td {
+						display: table-cell;
 						font-size: 16px;
 						line-height: 24px;
 						color: #4f4f4d;
@@ -131,8 +124,12 @@
 						white-space: nowrap;
 						overflow: hidden;
 						text-overflow: ellipsis;
-						&:nth-child(2n+1) {
-							background-color: #f9f9f9;
+						&:nth-child(2n) {
+							font: $PTSansbold;
+							font-size: 16px;
+							line-height: 24px;
+							color: #191917;
+							padding: 0 10px 0 15px;
 						}
 					}
 				}

@@ -183,19 +183,26 @@
 			width: 100%;
 			.tabs {
 				display: table;
+				width: 100%;
 				.tab {
 					float: none;
 					display: table-cell;
+					text-align: center;
 					padding: 0 5px;
 				}
 			}
 			.product-specifications {
+				width: 100%;
+				margin-bottom: 20px;
+				overflow: auto;
 				.table {
-					.labels, .values {
-						width: 50%;
-					}
 					.td {
-						padding: 0 5px;	
+						font-size: 14px;
+						padding: 0 5px;
+						&:nth-child(2n) {
+							padding: 0 5px;
+							font-size: 14px;
+						}
 					}
 				}
 			}

@@ -193,15 +193,23 @@ body {
   .product .product-main .product-details {
     width: 100%; }
     .product .product-main .product-details .tabs {
-      display: table; }
+      display: table;
+      width: 100%; }
       .product .product-main .product-details .tabs .tab {
         float: none;
         display: table-cell;
+        text-align: center;
         padding: 0 5px; }
-    .product .product-main .product-details .product-specifications .table .labels, .product .product-main .product-details .product-specifications .table .values {
-      width: 50%; }
-    .product .product-main .product-details .product-specifications .table .td {
-      padding: 0 5px; }
+    .product .product-main .product-details .product-specifications {
+      width: 100%;
+      margin-bottom: 20px;
+      overflow: auto; }
+      .product .product-main .product-details .product-specifications .table .td {
+        font-size: 14px;
+        padding: 0 5px; }
+        .product .product-main .product-details .product-specifications .table .td:nth-child(2n) {
+          padding: 0 5px;
+          font-size: 14px; }
   .album-gallery .photo {
     width: 100%; }
   .popup .popup-wrap .popup-box .popup-body {
@@ -335,7 +343,7 @@ popup {
       vertical-align: middle; }
       popup .popup-wrap .popup-box .popup-body {
         width: 750px;
-        padding: 25px;
+        padding: 25px 50px;
         margin: auto; }
       popup .popup-wrap .popup-box .popup-header:after {
         content: '';
@@ -357,8 +365,6 @@ popup {
       popup .popup-wrap .popup-box .popup-content {
         position: relative; }
         popup .popup-wrap .popup-box .popup-content .img-box {
-          background: #fff;
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
           overflow: hidden; }
           popup .popup-wrap .popup-box .popup-content .img-box ul {
             -webkit-transition: transform 0.5s ;
@@ -376,21 +382,37 @@ popup {
           popup .popup-wrap .popup-box .popup-content .img-box img {
             display: block;
             max-width: 100%;
-            margin: 0 auto; }
+            margin: 0 auto;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
         popup .popup-wrap .popup-box .popup-content .arrow {
           position: absolute;
-          top: 50%;
-          cursor: pointer;
-          width: 13px; }
+          top: 0;
+          bottom: 0;
+          cursor: pointer; }
+          popup .popup-wrap .popup-box .popup-content .arrow .icon {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%); }
           popup .popup-wrap .popup-box .popup-content .arrow svg {
+            width: 13px;
             fill: none;
             stroke-width: 6px;
             stroke: #fff;
             vertical-align: middle; }
           popup .popup-wrap .popup-box .popup-content .arrow.left {
+            right: 50%;
             left: -45px; }
+            popup .popup-wrap .popup-box .popup-content .arrow.left .icon {
+              left: 15px; }
           popup .popup-wrap .popup-box .popup-content .arrow.right {
+            left: 50%;
             right: -45px; }
+            popup .popup-wrap .popup-box .popup-content .arrow.right .icon {
+              right: 15px; }
   popup.active {
     visibility: visible;
     opacity: 1; }
@@ -720,6 +742,22 @@ header .menu-box {
         margin-right: 11px;
         border-radius: 50%;
         background-color: #dad4d4; }
+  .content.error-page h3 {
+    color: #dc1f26;
+    font: 14px/1rem PTSansBold, sans-serif;
+    font-size: 24px;
+    line-height: 22px;
+    margin-bottom: 10px; }
+  .content.error-page p {
+    font-size: 16px;
+    line-height: 22px; }
+  .content.error-page .main-link {
+    color: #303ec1;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 20px;
+    padding-right: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 64.7"><path fill="#303ec1" d="M175.75,6.84H97.24a1.24,1.24,0,1,1,0-2.49h78.51a1.24,1.24,0,1,1,0,2.49Z" transform="translate(-96 26.75)"/><path fill="#303ec1" d="M144.64,38a1.27,1.27,0,0,1-.88-.36,1.23,1.23,0,0,1,0-1.75L174,5.6,143.76-24.64a1.23,1.23,0,0,1,0-1.75,1.23,1.23,0,0,1,1.75,0l31.11,31.1a1.25,1.25,0,0,1,0,1.75L145.51,37.57A1.21,1.21,0,0,1,144.64,38Z" transform="translate(-96 26.75)"/></svg>') right 5px/14px no-repeat; }
 
 .links {
   margin-top: 40px; }
@@ -1325,6 +1363,8 @@ header .menu-box {
         min-height: 245px; }
         .catalog .manufacturer .products .product-wrap .product .img {
           padding: 10px;
+          height: 205px;
+          overflow: hidden;
           -webkit-transition: all 0.25s ;
           -moz-transition: all 0.25s ;
           -ms-transition: all 0.25s ;
@@ -1503,32 +1543,28 @@ header .menu-box {
         background: #fff;
         color: #dc1f26;
         cursor: default; }
-  .product .product-main .product-details .product-specifications .table:after {
-    content: '';
-    display: block;
-    clear: both; }
-  .product .product-main .product-details .product-specifications .table .labels {
-    width: 40%;
-    float: left; }
-  .product .product-main .product-details .product-specifications .table .values {
-    float: left;
-    width: 60%; }
-    .product .product-main .product-details .product-specifications .table .values .td {
-      font: 14px/1rem PTSansBold, sans-serif;
+  .product .product-main .product-details .product-specifications .table {
+    display: table;
+    width: 100%; }
+    .product .product-main .product-details .product-specifications .table .tr {
+      display: table-row; }
+      .product .product-main .product-details .product-specifications .table .tr:nth-child(2n+1) {
+        background-color: #f9f9f9; }
+    .product .product-main .product-details .product-specifications .table .td {
+      display: table-cell;
       font-size: 16px;
       line-height: 24px;
-      color: #191917;
-      padding: 0 10px 0 15px; }
-  .product .product-main .product-details .product-specifications .table .td {
-    font-size: 16px;
-    line-height: 24px;
-    color: #4f4f4d;
-    padding: 0 15px 0 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-    .product .product-main .product-details .product-specifications .table .td:nth-child(2n+1) {
-      background-color: #f9f9f9; }
+      color: #4f4f4d;
+      padding: 0 15px 0 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .product .product-main .product-details .product-specifications .table .td:nth-child(2n) {
+        font: 14px/1rem PTSansBold, sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        color: #191917;
+        padding: 0 10px 0 15px; }
 
 .product .product-description {
   animation: switch 0.25s ease-in-out; }
@@ -2070,15 +2106,23 @@ footer .developed {
   .product .product-main .product-details {
     width: 100%; }
     .product .product-main .product-details .tabs {
-      display: table; }
+      display: table;
+      width: 100%; }
       .product .product-main .product-details .tabs .tab {
         float: none;
         display: table-cell;
+        text-align: center;
         padding: 0 5px; }
-    .product .product-main .product-details .product-specifications .table .labels, .product .product-main .product-details .product-specifications .table .values {
-      width: 50%; }
-    .product .product-main .product-details .product-specifications .table .td {
-      padding: 0 5px; }
+    .product .product-main .product-details .product-specifications {
+      width: 100%;
+      margin-bottom: 20px;
+      overflow: auto; }
+      .product .product-main .product-details .product-specifications .table .td {
+        font-size: 14px;
+        padding: 0 5px; }
+        .product .product-main .product-details .product-specifications .table .td:nth-child(2n) {
+          padding: 0 5px;
+          font-size: 14px; }
   .album-gallery .photo {
     width: 100%; }
   .popup .popup-wrap .popup-box .popup-body {
