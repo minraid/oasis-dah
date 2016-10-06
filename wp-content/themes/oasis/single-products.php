@@ -89,7 +89,7 @@
                             if($examples) {
                                 foreach ($examples as $key => $example) { ?>
                                     <div class="photo">
-                                        <div class="medium" ng-click='product.showGallery(<?php echo( json_encode($examples) .",". $key); ?>);'>
+                                        <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($examples) .",". $key); ?>);'>
     <img src="<?php echo $example['sizes']['medium']; ?>" alt=""></div>
 </div>
 <?php } 
@@ -100,7 +100,7 @@
     if($accessories) {
         foreach ($accessories as $key => $accessory) { ?>
             <div class="photo">
-                <div class="medium" ng-click='product.showGallery(<?php echo( json_encode($accessories) .",". $key); ?>);'><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
+                <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($accessories) .",". $key); ?>);'><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
 </div>
 <?php } 
 } ?>
