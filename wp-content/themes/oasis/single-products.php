@@ -41,8 +41,8 @@
                                             if(!empty($carousel)) {
                                                 foreach ($carousel as $index => $color) { ?>
                                                     <li style="width: <?= (100/count($carousel)).'%'; ?>">
-                                                        <div class="img-box" ng-click="color= {img:'<?php echo $color['sizes']['thumbnail']; ?>', title: '<?php echo $color['title']; ?>', index: <?= $index; ?>}">
-                                                            <img src="<?php echo $color['sizes']['thumbnail']; ?>" alt="<?php echo $color['title']; ?>">
+                                                        <div class="img-box" ng-click="color= {img:'<?php echo $color['sizes']['medium']; ?>', title: '<?php echo $color['title']; ?>', index: <?= $index; ?>}">
+                                                            <img src="<?php echo $color['sizes']['medium']; ?>" alt="<?php echo $color['title']; ?>">
                                                         </div>
                                                     </li>
                                                     <?php 
@@ -89,7 +89,7 @@
                             if($examples) {
                                 foreach ($examples as $key => $example) { ?>
                                     <div class="photo">
-                                        <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($examples) .",". $key); ?>);'>
+                                        <div class="medium" ng-click='product.showGallery(<?php echo( json_encode($examples) .",". $key); ?>);'>
     <img src="<?php echo $example['sizes']['medium']; ?>" alt=""></div>
 </div>
 <?php } 
@@ -100,7 +100,7 @@
     if($accessories) {
         foreach ($accessories as $key => $accessory) { ?>
             <div class="photo">
-                <div class="thumbnail" ng-click='product.showGallery(<?php echo( json_encode($accessories) .",". $key); ?>);'><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
+                <div class="medium" ng-click='product.showGallery(<?php echo( json_encode($accessories) .",". $key); ?>);'><img src="<?php echo $accessory['sizes']['medium']; ?>" alt=""></div>
 </div>
 <?php } 
 } ?>
