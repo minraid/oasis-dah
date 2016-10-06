@@ -173,7 +173,8 @@
 						overflow: hidden;
 						@include transition;
 						img {
-							width: 100%;
+							width: auto;
+							max-height: 100%;
 							margin: 0;
 						}
 					}

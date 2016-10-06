@@ -1376,7 +1376,8 @@ header .menu-box {
           -o-transition: all 0.25s ;
           transition: all 0.25s ; }
           .catalog .manufacturer .products .product-wrap .product .img img {
-            width: 100%;
+            width: auto;
+            max-height: 100%;
             margin: 0; }
         .catalog .manufacturer .products .product-wrap .product .name {
           -webkit-transition: all 0.25s ;
