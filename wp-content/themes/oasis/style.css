@@ -1370,6 +1370,7 @@ header .menu-box {
           padding: 10px;
           height: 205px;
           overflow: hidden;
+          text-align: center;
           -webkit-transition: all 0.25s ;
           -moz-transition: all 0.25s ;
           -ms-transition: all 0.25s ;
@@ -1377,6 +1378,7 @@ header .menu-box {
           transition: all 0.25s ; }
           .catalog .manufacturer .products .product-wrap .product .img img {
             width: auto;
+            max-width: 100%;
             max-height: 100%;
             margin: 0; }
         .catalog .manufacturer .products .product-wrap .product .name {
@@ -1390,8 +1392,6 @@ header .menu-box {
           font: 14px/1rem RobotoBold, sans-serif;
           font-size: 16px;
           line-height: 22px; }
-        .catalog .manufacturer .products .product-wrap .product:hover .img {
-          padding: 10px 15px; }
   .catalog .manufacturer .pagination {
     display: table;
     margin: auto; }
