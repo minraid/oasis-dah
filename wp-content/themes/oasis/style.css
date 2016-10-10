@@ -728,7 +728,7 @@ header .menu-box {
     font-size: 18px;
     line-height: 22px;
     margin-bottom: 20px; }
-  .content h3 {
+  .content h3, .content h4, .content h5, .content h6 {
     font: 14px/1rem PTSansBold, sans-serif;
     font-size: 16px;
     line-height: 20px;
@@ -1239,7 +1239,7 @@ header .menu-box {
       -o-transition: max-height 0.25s ease-in-out;
       transition: max-height 0.25s ease-in-out; }
       .catalog .category .cat-description .description.active {
-        max-height: 1500px; }
+        max-height: 10000px; }
         .catalog .category .cat-description .description.active + .more:after {
           border-top: none;
           border-bottom: 8px solid #4f4f4d; }
@@ -1327,7 +1327,7 @@ header .menu-box {
       -o-transition: max-height 0.25s ease-in-out;
       transition: max-height 0.25s ease-in-out; }
       .catalog .manufacturer .manufacturer-text .description.active {
-        max-height: 1500px; }
+        max-height: 10000px; }
         .catalog .manufacturer .manufacturer-text .description.active + .arrow:after {
           border-top: none;
           border-bottom: 8px solid #dad4d4; }

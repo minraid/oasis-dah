@@ -5,6 +5,7 @@
 	<title>Oasis Dah</title>
 	<link rel="stylesheet" href="<?php bloginfo('template_url' ); ?>/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<?php wp_head(); ?>
 </head>
 <body>
 	<header>
