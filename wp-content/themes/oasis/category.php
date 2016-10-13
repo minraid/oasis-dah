@@ -24,6 +24,7 @@
                     <?php foreach ($categories as $category) {
                     $args = [
                     'post_type' => 'products',
+                    'posts_per_page' => 4,
                     'tax_query' => [
                     [
                     'taxonomy' => 'category',
