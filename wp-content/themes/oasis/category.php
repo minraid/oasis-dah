@@ -75,7 +75,6 @@
                     } else { 
                     $args = [
                     'post_type' => 'products',
-                    'posts_per_page' => 8,
                     'tax_query' => [
                     [
                     'taxonomy' => 'category',
