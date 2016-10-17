@@ -75,6 +75,7 @@
                     } else { 
                     $args = [
                     'post_type' => 'products',
+                    'numberposts' => -1,
                     'tax_query' => [
                     [
                     'taxonomy' => 'category',
@@ -90,7 +91,7 @@
                                 <img src="<?php the_field('thumbnail', $cat); ?>" alt="">
                             </div>
                             <div class="info">
-                                <span class="name"><?= $cat->name ?></span>
+                                <h1 class="name"><?= $cat->name ?></h1>
                                 <div class="country">
                                     <?php echo __('[:ua]Країна-виробник: [:ru]Страна-производитель: [:]'); ?>
                                     <strong><?php the_field('country', $cat); ?></strong>
