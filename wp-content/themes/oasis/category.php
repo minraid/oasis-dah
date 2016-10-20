@@ -2,13 +2,20 @@
 <section class="content-inner">
     <div class="container">
         <div class="content-box">
+            <?php $cat_var = get_query_var('cat');
+            if($cat_var === 1) {
+                global $wp_query;
+                $wp_query->set_404();
+                status_header( 404 );
+                get_template_part( 404 );
+                exit();
+            }
+            $cat = get_category($cat_var);
+            $categories = get_categories( 'parent='.$cat->term_id );
+            if(count($categories)>0) { ?>
             <?php get_sidebar( ); ?>
             <div class="content">
                 <div class="catalog">
-                    <?php $cat_var = get_query_var('cat');
-                    $cat = get_category($cat_var);
-                    $categories = get_categories( 'parent='.$cat->term_id );
-                    if(count($categories)>0) { ?>
                     <div class="category">
                         <div class="cat-img">
                             <img src="<?php the_field('thumbnail', $cat); ?>" alt="">
@@ -85,6 +92,9 @@
                     ];
                     $posts = get_posts($args);
                     ?>
+            <?php get_sidebar('brand'); ?>
+            <div class="content">
+                <div class="catalog">
                     <div class="manufacturer">
                         <div class="manufacturer-description">
                             <div class="logo">

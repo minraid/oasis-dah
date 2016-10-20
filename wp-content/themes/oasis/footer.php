@@ -33,7 +33,7 @@
 <script src="<?php bloginfo( 'template_url' ); ?>/js/gallery.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/contact.controller.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/comments.controller.js"></script>
-<script src="<?php bloginfo( 'template_url' ); ?>/js/mobileScroll.js"></script>
+<!-- <script src="<?php bloginfo( 'template_url' ); ?>/js/mobileScroll.js"></script> -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaE5gtN_UQMu8hCgXZyUMuBemyNj2cQDk&callback=initMap"></script>
 <?php wp_footer(); ?>
 </body>

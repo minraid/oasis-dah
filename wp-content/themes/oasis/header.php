@@ -2,7 +2,7 @@
 <html lang="en" ng-app="app">
 <head>
 	<meta charset="UTF-8">
-	<title>Oasis Dah</title>
+	<title><?php wp_title(); ?></title>
 	<link rel="stylesheet" href="<?php bloginfo('template_url' ); ?>/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<?php wp_head(); ?>

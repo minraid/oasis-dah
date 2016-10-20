@@ -153,6 +153,8 @@ body {
       padding: 0; }
       aside + .content img {
         max-width: 100%; }
+    aside.mobile-hidden {
+      display: none; }
   .logos {
     display: none; }
   footer .footer-box .products, footer .footer-box .menu {
@@ -2078,6 +2080,8 @@ footer .developed {
       padding: 0; }
       aside + .content img {
         max-width: 100%; }
+    aside.mobile-hidden {
+      display: none; }
   .logos {
     display: none; }
   footer .footer-box .products, footer .footer-box .menu {

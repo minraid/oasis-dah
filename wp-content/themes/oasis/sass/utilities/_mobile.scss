@@ -116,6 +116,9 @@
 				max-width: 100%;
 			}
 		}
+		&.mobile-hidden {
+			display: none;
+		}
 	}
 	.logos {
 		display: none;
