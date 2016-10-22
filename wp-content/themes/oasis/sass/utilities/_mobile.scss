@@ -165,6 +165,11 @@
 	.catalog .manufacturer {	
 		.products .product-wrap {
 			width: 50%;
+			.product {
+				.name {
+					min-height: 152px;
+				}
+			}
 		}
 		.manufacturer-description { 
 			.logo {

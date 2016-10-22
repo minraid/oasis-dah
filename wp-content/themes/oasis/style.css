@@ -184,6 +184,8 @@ body {
     width: 100%; }
   .catalog .manufacturer .products .product-wrap {
     width: 50%; }
+    .catalog .manufacturer .products .product-wrap .product .name {
+      min-height: 152px; }
   .catalog .manufacturer .manufacturer-description .logo {
     display: none; }
   .catalog .manufacturer .manufacturer-description .info {
@@ -2111,6 +2113,8 @@ footer .developed {
     width: 100%; }
   .catalog .manufacturer .products .product-wrap {
     width: 50%; }
+    .catalog .manufacturer .products .product-wrap .product .name {
+      min-height: 152px; }
   .catalog .manufacturer .manufacturer-description .logo {
     display: none; }
   .catalog .manufacturer .manufacturer-description .info {
