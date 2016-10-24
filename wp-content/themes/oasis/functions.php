@@ -129,7 +129,7 @@ function register_articles() {
 		'menu_position' => 5,
 		'menu_icon' => 'dashicons-edit', 
 		'supports'  => array('title','editor','thumbnail'),
-		'rewrite' => array('slug' => 'gallery', 'with_front' => true),
+		'rewrite' => array('slug' => 'articles', 'with_front' => true),
 		'query_var' => true,
 		'labels' => array(
 			'name'               => 'Статті',
