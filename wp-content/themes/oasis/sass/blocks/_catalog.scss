@@ -22,7 +22,7 @@
 			}
 			.description {
 				overflow: hidden;
-				max-height: 100px;
+				max-height: 92px;
 				@include transition(max-height, 0.25s, 'ease-in-out');
 				&.active {
 					max-height: 10000px;

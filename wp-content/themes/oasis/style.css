@@ -1236,7 +1236,7 @@ header .menu-box {
       color: #191917; }
     .catalog .category .cat-description .description {
       overflow: hidden;
-      max-height: 100px;
+      max-height: 92px;
       -webkit-transition: max-height 0.25s ease-in-out;
       -moz-transition: max-height 0.25s ease-in-out;
       -ms-transition: max-height 0.25s ease-in-out;
